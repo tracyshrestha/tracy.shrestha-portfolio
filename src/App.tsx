@@ -4,12 +4,12 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-black">
       {/* Fixed Navbar */}
       <Navbar />
 
       {/* Main content */}
-      <main className="flex-grow container mx-auto px-4 py-6">
+      <main className="flex-grow container w-full mx-auto ">
         <Outlet />
       </main>
 
