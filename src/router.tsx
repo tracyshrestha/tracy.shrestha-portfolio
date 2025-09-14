@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
+import About from "./pages/sections/About";
+import Contact from "./pages/sections/Contact";
 import ErrorPage from "./pages/ErrorPage";
-import Crm from "./pages/projects/Crm";
-import OpenData from "./pages/projects/OpenData";
+import Crm from "./pages/sections/projects/Crm";
+import OpenData from "./pages/sections/projects/OpenData";
 
 const router = createBrowserRouter([
   {
