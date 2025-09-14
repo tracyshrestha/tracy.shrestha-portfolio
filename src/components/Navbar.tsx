@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { useState } from "react";
+import { MdHome } from "react-icons/md";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,9 +26,10 @@ function Navbar() {
         </h1>
         <div className="hidden md:flex">
           <ul className="flex space-x-4 text-[25px]">
-            <li>
-              <Link to="/" className="hover:underline">
-                Home
+            <li className="flex ">
+              <Link to="/" className="flex hover:underline">
+                <MdHome className="mt-1" />  
+                {/* Home */}
               </Link>
             </li>
             <li>
@@ -70,15 +72,16 @@ function Navbar() {
 
       {/* Mobile Menu Popover */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-gray-900 z-50 shadow-lg">
-          <div className="container mx-auto px-6 py-4">
+        <div className="md:hidden absolute top-full left-0 w-full bg-gray-950 z-50 shadow-lg">
+          <div className="container mx-auto px-6 py-8">
             <ul className="flex flex-col space-y-4 text-xl">
               <li>
                 <Link
                   to="/"
-                  className="block py-2 hover:underline"
+                  className=" flex space-x-4 pt-2 hover:underline items-center"
                   onClick={closeMenu}
                 >
+                  <MdHome className="mt-1" />  &nbsp;
                   Home
                 </Link>
               </li>
@@ -87,7 +90,7 @@ function Navbar() {
                   href="https://www.linkedin.com/in/tracyshrestha"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="lexusText italic hover:underline flex items-center"
+                  className="  hover:underline flex items-center"
                   onClick={closeMenu}
                 >
                   <FaLinkedin className="mr-2" /> LinkedIn
@@ -98,7 +101,7 @@ function Navbar() {
                   href="https://github.com/tracyshrestha"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="lexusText italic hover:underline flex items-center"
+                  className="  hover:underline flex items-center"
                   onClick={closeMenu}
                 >
                   <FaGithub className="mr-2" /> GitHub

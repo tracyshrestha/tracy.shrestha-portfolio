@@ -1,10 +1,11 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import emailjs from "@emailjs/browser"
 import { X } from "lucide-react"
 import { Toast, useToast } from "../../components/ui/Toast"
+import { BsFillInfoCircleFill } from "react-icons/bs";
 
 interface EmailFormProps {
   onClose?: () => void
@@ -13,11 +14,27 @@ interface EmailFormProps {
 function EmailForm({ onClose }: EmailFormProps) {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showInfoPopup, setShowInfoPopup] = useState(false)
   const { toast, showToast, hideToast } = useToast()
+  const popupRef = useRef<HTMLDivElement>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
+
+  // Close popup when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
+        setShowInfoPopup(false)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
 
   const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -53,7 +70,28 @@ function EmailForm({ onClose }: EmailFormProps) {
       <div className="w-full p-6">
         <form onSubmit={sendEmail} className="space-y-4">
           <div className="flex justify-between items-center w-full mb-4">
-            <h1 className="text-lg font-semibold text-gray-900">Send Me A Message!</h1>
+            <div className="flex items-center relative">
+              <h1 className="text-lg font-semibold text-gray-900">Send Me A Message!</h1> &nbsp;
+              <BsFillInfoCircleFill 
+                className=" text-[12px] text-gray-500 cursor-pointer" 
+                onClick={() => setShowInfoPopup(!showInfoPopup)}
+              />
+              
+              {/* Info Popup */}
+              {showInfoPopup && (
+                <div 
+                  ref={popupRef}
+                  className="absolute top-8 left-0 mt-2 w-64 p-3 bg-white border border-gray-200 rounded-lg shadow-lg z-10"
+                >
+                  <p className="text-sm text-gray-600">
+                    Fill out this form to send me a message directly to my email. 
+                    I'll get back to you as soon as possible!
+                  </p>
+                  <div className="absolute -top-1.5 left-32 w-3 h-3 rotate-45 bg-white border-t border-l border-gray-200"></div>
+                </div>
+              )}
+            </div>
+            
             {onClose && (
               <button type="button" onClick={onClose} className="text-gray-400 hover:text-gray-600 transition-colors">
                 <X size={20} />
