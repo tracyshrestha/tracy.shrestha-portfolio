@@ -3,7 +3,7 @@ import Skills from "./sections/Skills";
 import Intro from "../components/Introduction/Intro";
 import About from "./sections/About";
 import Education from "./sections/Education";
-import Experience from "./sections/Experience";
+import Experience from "./sections/ExperienceNew";
 // import Contact from "./sections/Contact";
 
 function Home() {
@@ -15,19 +15,19 @@ function Home() {
       <div className="py-10">
         <About />
       </div>
-      <div className="flex flex-col md:flex-row md:space-x-6">
-        <div className="py-10">
+      <div className="lg:w-full flex flex-col lg:flex-row  lg:justify-around py-10 ">
+        <div className="">
           <Education />
         </div>
-        <div className="py-10">
+        <div className="">
           <Experience />
         </div>
       </div>
 
-      <div className="py-10">
+      <div className="pb-10">
         <Skills />
       </div>
-      <div className="py-10">
+      <div className="pb-10">
         <Work />
       </div>
       {/* <div className="py-10">
