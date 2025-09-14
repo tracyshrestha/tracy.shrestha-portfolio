@@ -4,7 +4,7 @@ function Intro() {
   return (
     <div>
       {/* Full-screen header section with the Hyperspeed background */}
-      <header className="relative h-dvh w-full overflow-hidden">
+      <header className="relative h-dvh w-screen overflow-hidden">
         {/* Wrap Hyperspeed in a div with the styling */}
         <div className="absolute inset-0 z-0 bg-black">
           <Hyperspeed
@@ -53,7 +53,10 @@ function Intro() {
           <h2 className="text-5xl font-bold text-white">
             Hello! I'm Tracy Shrestha
           </h2>
-          <p className="mt-4 text-xl text-gray-200">A Frontend Developer</p>
+          <h2 className="text-2xl font-bold text-white">
+            A Frontend Developer
+          </h2>
+          <p className="mt-4 text-xl text-gray-200">I build user-friendly, responsive web applications using React, TypeScript, and Tailwind CSS.</p>
         </div>
       </header>
 
