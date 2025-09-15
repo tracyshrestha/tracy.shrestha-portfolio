@@ -1,7 +1,9 @@
+import { ImBriefcase } from "react-icons/im";
 function ExperienceTimeline() {
   return (
     <section className=" text-white mx-12 items-center justify-center text-center ">
-      <h2 className="text-4xl font-semibold mb-8 text-white items-center justify-center text-center">
+      <h2 className="flex text-4xl font-semibold mb-8 text-white items-center justify-center text-center">
+        <ImBriefcase className="pr-2 mb-1"/>
         Experience
       </h2>
       <div className="flex flex-col gap-5 items-start max-w-2xl mx-auto p-6 bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group">
@@ -18,7 +20,7 @@ function ExperienceTimeline() {
                 Frontend Developer (Cellapp/ Smartpalika)
               </h3>
               <p className="text-white/80  leading-relaxed">
-                Sep 2018 - Aug 2023
+                Nov 2024 - Present
               </p>
             </div>
           </div>
@@ -28,12 +30,12 @@ function ExperienceTimeline() {
                 <div className="h-1.5 w-1.5 rounded-full bg-gray-300 border-1 border-white shadow-sm"></div>
               </div>
             </div>
-            <div className="  py-4  ">
+            <div className="  py-4 pl-8">
               <h3 className="font-semibold text-lg text-gray-100   transition-colors">
                 Frontend Developer Intern (Cellapp/ Smartpalika)
               </h3>
               <p className="text-white/80  leading-relaxed">
-                Sep 2018 - Aug 2023
+                July 2024 - Oct 2024
               </p>
             </div>
 

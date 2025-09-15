@@ -8,7 +8,7 @@ import Experience from "./sections/ExperienceNew";
 
 function Home() {
   return (
-    <div className="h-full bg-black w-screen">
+    <div className="h-full bg-black ">
       <div className="h-lvh">
         <Intro />
       </div>

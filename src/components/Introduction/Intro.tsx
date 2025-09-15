@@ -4,7 +4,7 @@ function Intro() {
   return (
     <div>
       {/* Full-screen header section with the Hyperspeed background */}
-      <header className="relative h-dvh w-screen overflow-hidden">
+      <header className="relative h-dvh w-full overflow-hidden">
         {/* Wrap Hyperspeed in a div with the styling */}
         <div className="absolute inset-0 z-0 bg-black">
           <Hyperspeed

@@ -16,10 +16,10 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-black text-white px-6 py-4 relative">
+    <nav className="sticky top-0 z-50 bg-black text-white px-6 py-4 ">
       <div className="container mx-auto flex justify-between items-center">
         <h1
-          className="text-3xl text-white"
+          className="text-4xl text-white"
           style={{ fontFamily: "'Pacifico', cursive" }}
         >
           Tracy
