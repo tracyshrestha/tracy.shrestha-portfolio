@@ -1,7 +1,11 @@
+// import { FaPencil } from "react-icons/fa6";
+import { FaTools } from "react-icons/fa";
 function Skills() {
   return (
     <section className="text-white mx-12 items-center justify-center text-center">
-      <h2 className="text-4xl font-semibold mb-8 text-white items-center justify-center text-center">
+      <h2 className="flex text-4xl font-semibold mb-8 text-white items-center justify-center text-center">
+        {/* <FaPencil className="pr-2 text-3xl" /> */}
+        <FaTools  className="pr-2 " />
         My Skills
       </h2>
       <div className="flex flex-col gap-5">

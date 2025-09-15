@@ -44,9 +44,12 @@ function Footer() {
             </div>
 
             <div className="flex flex-col justify-center align-center text-left">
-              <div className="flex">
+              <div
+                className="flex cursor-pointer"
+                onClick={() => (window.location.href = "tel:9767245189")}
+              >
                 <IoCallSharp className="mt-1" />
-                <p className="pl-2">9767245189</p>
+                <p className="pl-2">+977 9767245189</p>
               </div>
 
               <div
@@ -55,7 +58,7 @@ function Footer() {
                   (window.location.href = "mailto:tracysh99@gmail.com")
                 }
               >
-                <MdAttachEmail  className="mt-1"/>
+                <MdAttachEmail className="mt-1" />
                 <p className="pl-2">tracysh99@gmail.com</p>
               </div>
             </div>
@@ -77,19 +80,16 @@ function Footer() {
                   )
                 }
               >
-                <FaLinkedin  className="mt-1"/>
+                <FaLinkedin className="mt-1" />
                 <p className="pl-2">linkedin.com/in/tracyshrestha</p>
               </div>
               <div
                 className="flex  cursor-pointer"
                 onClick={() =>
-                  window.open(
-                    "https://github.com/tracyshrestha",
-                    "_blank"
-                  )
+                  window.open("https://github.com/tracyshrestha", "_blank")
                 }
               >
-                <FaGithub  className="mt-1"/>
+                <FaGithub className="mt-1" />
                 <p className="pl-2">github.com/tracyshrestha</p>
               </div>
             </div>

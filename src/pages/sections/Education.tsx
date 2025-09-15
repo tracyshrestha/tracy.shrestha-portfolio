@@ -1,7 +1,9 @@
+import { FaGraduationCap } from "react-icons/fa6";
 function Education() {
   return (
     <section className="text-white mx-12 items-center justify-center text-center ">
-      <h2 className="text-4xl font-semibold mb-8 text-white items-center justify-center text-center">
+      <h2 className="flex text-4xl font-semibold mb-8 text-white items-center justify-center text-center">
+        <FaGraduationCap className="pr-1" />
         Education
       </h2>
       <div className="flex flex-col gap-5">

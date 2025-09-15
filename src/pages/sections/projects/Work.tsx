@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { SlLock } from "react-icons/sl";
+import { RiFileCopy2Fill } from "react-icons/ri";
 
 function Work() {
   return (
     <section className="text-white mx-12 items-center justify-center text-center">
-      <h2 className="text-4xl font-semibold mb-8 text-white items-center justify-center text-center">
+      <h2 className="flex text-4xl font-semibold mb-8 text-white items-center justify-center text-center">
+        <RiFileCopy2Fill className="pr-2 mb-1" />
         My Projects
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
