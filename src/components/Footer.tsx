@@ -76,7 +76,7 @@ function Footer() {
                 onClick={() =>
                   window.open(
                     "https://www.linkedin.com/in/tracyshrestha",
-                    "_blank"
+                    "_blank",
                   )
                 }
               >

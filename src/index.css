@@ -1,13 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&family=Pacifico&display=swap");
 @import "tailwindcss";
 
 :root {
-  --font-sans: 'Markazi Text', sans-serif;
-  --font-pacifico: 'Pacifico', cursive;
+  --font-sans: "Markazi Text", sans-serif;
+  --font-pacifico: "Pacifico", cursive;
 }
 
 body {
   font-family: var(--font-sans);
 }
-
-

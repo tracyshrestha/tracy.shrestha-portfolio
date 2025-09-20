@@ -57,13 +57,16 @@ function Intro() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="p-4 "
           >
-          <h2 className="text-5xl font-bold text-white">
-            Hello! I'm Tracy Shrestha
-          </h2>
-          <h2 className="text-2xl font-bold text-white">
-            A Frontend Developer
-          </h2>
-          <p className="mt-4 text-xl text-gray-200">I build user-friendly, responsive web applications using React, TypeScript, and Tailwind CSS.</p>
+            <h2 className="text-5xl font-bold text-white">
+              Hello! I'm Tracy Shrestha
+            </h2>
+            <h2 className="text-2xl font-bold text-white">
+              A Frontend Developer
+            </h2>
+            <p className="mt-4 text-xl text-gray-200">
+              I build user-friendly, responsive web applications using React,
+              TypeScript, and Tailwind CSS.
+            </p>
           </motion.div>
         </div>
       </header>

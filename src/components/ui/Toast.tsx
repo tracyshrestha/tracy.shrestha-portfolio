@@ -1,44 +1,49 @@
-import { useState, useEffect } from "react"
-import { X, CheckCircle } from "lucide-react"
+import { useState, useEffect } from "react";
+import { X, CheckCircle } from "lucide-react";
 
 interface ToastProps {
-  message: string
-  type?: "success" | "error"
-  isVisible: boolean
-  onClose: () => void
-  duration?: number
+  message: string;
+  type?: "success" | "error";
+  isVisible: boolean;
+  onClose: () => void;
+  duration?: number;
 }
 
-export function Toast({ message, type = "success", isVisible, onClose, duration = 3000 }: ToastProps) {
-  const [shouldRender, setShouldRender] = useState(false)
-  const [isAnimating, setIsAnimating] = useState(false)
+export function Toast({
+  message,
+  type = "success",
+  isVisible,
+  onClose,
+  duration = 3000,
+}: ToastProps) {
+  const [shouldRender, setShouldRender] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-
     if (isVisible) {
-      setShouldRender(true)
+      setShouldRender(true);
       // Small delay to trigger animation
       setTimeout(() => {
-        setIsAnimating(true)
-      }, 10)
+        setIsAnimating(true);
+      }, 10);
 
       if (duration > 0) {
         const timer = setTimeout(() => {
-          setIsAnimating(false)
+          setIsAnimating(false);
           setTimeout(() => {
-            setShouldRender(false)
-            onClose()
-          }, 300) // Wait for exit animation
-        }, duration)
-        return () => clearTimeout(timer)
+            setShouldRender(false);
+            onClose();
+          }, 300); // Wait for exit animation
+        }, duration);
+        return () => clearTimeout(timer);
       }
     } else {
-      setIsAnimating(false)
-      setTimeout(() => setShouldRender(false), 300)
+      setIsAnimating(false);
+      setTimeout(() => setShouldRender(false), 300);
     }
-  }, [isVisible, duration, onClose])
+  }, [isVisible, duration, onClose]);
 
-  if (!shouldRender) return null
+  if (!shouldRender) return null;
 
   return (
     <div className="fixed bottom-4 right-4 z-[9999]">
@@ -51,15 +56,17 @@ export function Toast({ message, type = "success", isVisible, onClose, duration 
         ${isAnimating ? "translate-y-0 opacity-100 scale-100" : "-translate-y-2 opacity-0 scale-95"}
       `}
       >
-        {type === "success" && <CheckCircle size={20} className="text-green-600 flex-shrink-0" />}
+        {type === "success" && (
+          <CheckCircle size={20} className="text-green-600 flex-shrink-0" />
+        )}
         <span className="flex-1 text-sm font-medium">{message}</span>
         <button
           onClick={() => {
-            setIsAnimating(false)
+            setIsAnimating(false);
             setTimeout(() => {
-              setShouldRender(false)
-              onClose()
-            }, 300)
+              setShouldRender(false);
+              onClose();
+            }, 300);
           }}
           className={`
             flex-shrink-0 rounded-full p-1 transition-colors
@@ -70,27 +77,30 @@ export function Toast({ message, type = "success", isVisible, onClose, duration 
         </button>
       </div>
     </div>
-  )
+  );
 }
 
 export function useToast() {
   const [toast, setToast] = useState<{
-    message: string
-    type: "success" | "error"
-    isVisible: boolean
+    message: string;
+    type: "success" | "error";
+    isVisible: boolean;
   }>({
     message: "",
     type: "success",
     isVisible: false,
-  })
+  });
 
-  const showToast = (message: string, type: "success" | "error" = "success") => {
-    setToast({ message, type, isVisible: true })
-  }
+  const showToast = (
+    message: string,
+    type: "success" | "error" = "success",
+  ) => {
+    setToast({ message, type, isVisible: true });
+  };
 
   const hideToast = () => {
-    setToast((prev) => ({ ...prev, isVisible: false }))
-  }
+    setToast((prev) => ({ ...prev, isVisible: false }));
+  };
 
-  return { toast, showToast, hideToast }
+  return { toast, showToast, hideToast };
 }
