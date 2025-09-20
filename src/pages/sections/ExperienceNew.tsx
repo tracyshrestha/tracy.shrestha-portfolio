@@ -1,15 +1,23 @@
 import { ImBriefcase } from "react-icons/im";
+import { motion } from "framer-motion";
 function ExperienceTimeline() {
   return (
-    <section className=" text-white mx-12 items-center justify-center text-center ">
+    <section className="text-white mx-12 items-center justify-center text-center ">
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="p-4"
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
       <h2 className="flex text-4xl font-semibold mb-8 text-white items-center justify-center text-center">
         <ImBriefcase className="pr-2 mb-1"/>
         Experience
       </h2>
       <div className="flex flex-col gap-5 items-start max-w-2xl mx-auto p-6 bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group">
-        <div className="flex flex-col py-2 px-8">
+        <div className="flex flex-col px-8">
           {/* Card */}
-          <div className="flex-1 pb-4 relative">
+          <div className="flex-1 pb-1 relative">
             <div className="absolute top-[25%] -left-5 ml-[0px] w-px h-28 bg-gray-400">
               <div className="relative z-10 -ml-1 flex h-2 w-2 items-center justify-center">
                 <div className="h-1.5 w-1.5 rounded-full bg-gray-300 border-1 border-white shadow-sm"></div>
@@ -38,10 +46,10 @@ function ExperienceTimeline() {
                 July 2024 - Oct 2024
               </p>
             </div>
-
+            </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

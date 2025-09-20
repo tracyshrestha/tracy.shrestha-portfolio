@@ -1,4 +1,5 @@
 import Hyperspeed from "./HyperspeedBackground";
+import { motion } from "framer-motion";
 
 function Intro() {
   return (
@@ -50,6 +51,12 @@ function Intro() {
 
         {/* Your welcome content overlayed on top */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="p-4 "
+          >
           <h2 className="text-5xl font-bold text-white">
             Hello! I'm Tracy Shrestha
           </h2>
@@ -57,6 +64,7 @@ function Intro() {
             A Frontend Developer
           </h2>
           <p className="mt-4 text-xl text-gray-200">I build user-friendly, responsive web applications using React, TypeScript, and Tailwind CSS.</p>
+          </motion.div>
         </div>
       </header>
 

@@ -28,7 +28,7 @@ function Footer() {
         </div>
 
         {/* Content */}
-        <div className="relative flex z-10 lg:flex-row flex-col justify-between items-center ">
+        <div className="relative flex z-10 sm:flex-row flex-col justify-between items-center ">
           <div className="w-2/6   items-center text-center hidden sm:block">
             <p className="text-xl w-full text-white ">
               © {new Date().getFullYear()} Tracy Shrestha Portfolio.

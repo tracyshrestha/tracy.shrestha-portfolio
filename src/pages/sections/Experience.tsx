@@ -1,6 +1,16 @@
 import { ImBriefcase } from "react-icons/im";
+import { motion } from "framer-motion";
+
 function Experience() {
   return (
+    <div>
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="p-4"
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
     <section className=" text-white mx-12 items-center justify-center text-center ">
       <h2 className="flex text-4xl font-semibold mb-8 text-white items-center justify-center text-center">
         <ImBriefcase />
@@ -18,6 +28,8 @@ function Experience() {
         </div>
       </div>
     </section>
+      </motion.div>
+    </div>
   );
 }
 
