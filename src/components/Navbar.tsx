@@ -25,7 +25,7 @@ function Navbar() {
           Tracy
         </h1>
         <div className="hidden md:flex">
-          <ul className="flex space-x-4 text-[25px]">
+          <ul className="flex space-x-6 text-[25px]">
             <li className="flex ">
               <Link to="/" className="flex hover:underline">
                 <MdHome className="mt-1" />

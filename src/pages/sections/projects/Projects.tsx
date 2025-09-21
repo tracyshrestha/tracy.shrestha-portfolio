@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { SlLock } from "react-icons/sl";
 import { RiFileCopy2Fill } from "react-icons/ri";
 import { motion } from "framer-motion";
@@ -17,7 +16,7 @@ function Work() {
           <RiFileCopy2Fill className="pr-2 mb-1" />
           My Projects
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 ">
           <div className="bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg p-6 shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group">
             <h3 className="text-xl font-bold mb-3 text-white group-hover:text-white/90 transition-colors">
               CRM System
@@ -38,7 +37,26 @@ function Work() {
               <span>Private deployment for client use</span>
             </button>
           </div>
-
+          <div className="bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg p-6 shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group">
+            <h3 className="text-xl font-bold mb-3 text-white group-hover:text-white/90 transition-colors">
+              Portfolio
+            </h3>
+            <p className="text-white/80 mb-4 leading-relaxed">
+              Designed and built a single-page portfolio showcasing skills and
+              projects with smooth animations.
+            </p>
+            <p className="text-white/80 mb-4 leading-relaxed">
+              Tech: React, TypeScript, Vite, Tailwind CSS
+            </p>
+            <a
+                href="https://github.com/tracyshrestha/tracy.shrestha-portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-2 my-3 bg-white/90 hover:bg-white text-[#46376d] rounded-3xl hover:shadow-lg backdrop-blur-sm transition-all duration-200 font-medium"
+              >
+                View More
+              </a>
+          </div>
           <div className="bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg p-6 shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group">
             <h3 className="text-xl font-bold mb-3 text-white group-hover:text-white/90 transition-colors">
               Open Data Portal
@@ -58,25 +76,6 @@ function Work() {
               <SlLock />
               <span>Private deployment for client use</span>
             </button>
-          </div>
-
-          <div className="bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg p-6 shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group">
-            <h3 className="text-xl font-bold mb-3 text-white group-hover:text-white/90 transition-colors">
-              Portfolio
-            </h3>
-            <p className="text-white/80 mb-4 leading-relaxed">
-              Designed and built a single-page portfolio showcasing skills and
-              projects with smooth animations.
-            </p>
-            <p className="text-white/80 mb-4 leading-relaxed">
-              Tech: React, TypeScript, Vite, Tailwind CSS
-            </p>
-            <Link
-              to="/"
-              className="inline-block px-6 py-2 my-3 bg-white/90 hover:bg-white text-[#46376d] rounded-3xl hover:shadow-lg backdrop-blur-sm transition-all duration-200 font-medium"
-            >
-              View More
-            </Link>
           </div>
         </div>
       </motion.div>
