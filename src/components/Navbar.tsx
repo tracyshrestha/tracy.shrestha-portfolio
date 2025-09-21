@@ -28,7 +28,7 @@ function Navbar() {
           <ul className="flex space-x-6 text-[25px]">
             <li className="flex ">
               <Link to="/" className="flex hover:underline">
-                <MdHome className="mt-1" />  
+                <MdHome className="mt-1" />
                 {/* Home */}
               </Link>
             </li>
@@ -81,8 +81,7 @@ function Navbar() {
                   className=" flex space-x-4 pt-2 hover:underline items-center"
                   onClick={closeMenu}
                 >
-                  <MdHome className="mt-1" />  &nbsp;
-                  Home
+                  <MdHome className="mt-1" /> &nbsp; Home
                 </Link>
               </li>
               <li className="flex space-x-4 pt-2">

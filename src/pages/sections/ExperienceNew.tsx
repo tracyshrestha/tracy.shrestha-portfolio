@@ -46,6 +46,7 @@ function ExperienceTimeline() {
                 July 2024 - Oct 2024
               </p>
             </div>
+
             </div>
           </div>
         </div>
