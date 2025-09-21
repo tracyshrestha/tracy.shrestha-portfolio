@@ -1,4 +1,5 @@
 import Projects from "./sections/projects/Projects";
+import ProjectSwiper from "./sections/projects/ProjectSwiper";
 import Skills from "./sections/Skills";
 import Intro from "../components/Introduction/Intro";
 import About from "./sections/About";
@@ -27,8 +28,11 @@ function Home() {
       <div className="py-10">
         <Skills />
       </div>
-      <div className="pt-8 pb-12">
+      <div className="pt-8 pb-12 lg:hidden block">
         <Projects />
+      </div>
+      <div className="pt-8 pb-12 hidden lg:block">
+        <ProjectSwiper />
       </div>
       {/* <div className="py-10">
         <Contact />

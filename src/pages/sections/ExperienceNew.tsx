@@ -14,8 +14,8 @@ function ExperienceTimeline() {
         <ImBriefcase className="pr-2 mb-1"/>
         Experience
       </h2>
-      <div className="flex flex-col gap-5 items-start max-w-2xl mx-auto p-6 bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group">
-        <div className="flex flex-col px-8">
+      <div className="w-full flex flex-col gap-5    p-6 bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group justify-center items-center">
+        <div className="flex flex-col px-8 ">
           {/* Card */}
           <div className="flex-1 pb-1 relative">
             <div className="absolute top-[25%] -left-5 ml-[0px] w-px h-28 bg-gray-400">
@@ -23,11 +23,11 @@ function ExperienceTimeline() {
                 <div className="h-1.5 w-1.5 rounded-full bg-gray-300 border-1 border-white shadow-sm"></div>
               </div>
             </div>
-            <div className="  p-0  ">
-              <h3 className="font-semibold text-lg text-gray-100 mt-2      transition-colors">
+            <div className="p-0  ">
+              <h3 className="font-semibold text-2xl text-gray-100 mt-2 transition-colors">
                 Frontend Developer (Cellapp/ Smartpalika)
               </h3>
-              <p className="text-white/80  leading-relaxed">
+              <p className="text-white/80 text-xl leading-relaxed">
                 Nov 2024 - Present
               </p>
             </div>
@@ -38,11 +38,11 @@ function ExperienceTimeline() {
                 <div className="h-1.5 w-1.5 rounded-full bg-gray-300 border-1 border-white shadow-sm"></div>
               </div>
             </div>
-            <div className="  py-4 pl-8">
-              <h3 className="font-semibold text-lg text-gray-100   transition-colors">
+            <div className="py-4 pl-4">
+              <h3 className="font-semibold text-2xl text-gray-100   transition-colors">
                 Frontend Developer Intern (Cellapp/ Smartpalika)
               </h3>
-              <p className="text-white/80  leading-relaxed">
+              <p className="text-white/80 text-xl leading-relaxed">
                 July 2024 - Oct 2024
               </p>
             </div>
