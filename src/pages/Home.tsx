@@ -1,10 +1,10 @@
 import Projects from "./sections/projects/Projects";
 import ProjectSwiper from "./sections/projects/ProjectSwiper";
-import Skills from "./sections/Skills";
+import NewSkills from "./sections/skills/SkillsMarquee";
 import Intro from "../components/Introduction/Intro";
 import About from "./sections/About";
 import Education from "./sections/Education";
-import Experience from "./sections/ExperienceNew";
+import Experience from "./sections/ExperienceCard";
 // import Contact from "./sections/Contact";
 
 function Home() {
@@ -25,18 +25,15 @@ function Home() {
         </div>
       </div>
 
-      <div className="py-10">
-        <Skills />
+      <div className="py-10 ">
+        <NewSkills />
       </div>
-      <div className="pt-8 pb-12 lg:hidden block">
+      <div className="pt-3 pb-12 lg:hidden block">
         <Projects />
       </div>
-      <div className="pt-8 pb-12 hidden lg:block">
+      <div className="pt-2 pb-12 hidden lg:block">
         <ProjectSwiper />
       </div>
-      {/* <div className="py-10">
-        <Contact />
-      </div> */}
     </div>
   );
 }

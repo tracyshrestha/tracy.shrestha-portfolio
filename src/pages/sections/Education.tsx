@@ -6,7 +6,7 @@ function Education() {
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="py-4"
+        className="pt-4"
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >

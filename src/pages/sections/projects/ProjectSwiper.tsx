@@ -76,7 +76,8 @@ function Work() {
                 </h3>
                 <p className="text-white/80 mb-4 leading-relaxed text-xl">
                   Designed and built a single-page portfolio showcasing skills
-                  and projects with smooth animations.
+                  and projects with smooth animations.Leveraged React component
+                  libraries to enhance interactivity and design
                 </p>
                 <p className="text-white/80 mb-4 leading-relaxed text-xl">
                   Tech: React, TypeScript, Vite, Tailwind CSS
@@ -101,8 +102,8 @@ function Work() {
                 </h3>
                 <p className="text-white/80 mb-4 leading-relaxed text-xl">
                   Developed an open data portal with interactive charts and
-                  multilingual support. Implemented population pyramid
-                  visualizations using Recharts.
+                  integrated EmailJS for contact form handling. Implemented
+                  population pyramid visualizations using Recharts.
                 </p>
                 <p className="text-white/80 mb-4 leading-relaxed text-xl">
                   Tech: React, Tailwind CSS, Recharts

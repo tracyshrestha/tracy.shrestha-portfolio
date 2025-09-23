@@ -9,7 +9,7 @@ function App() {
       <Navbar />
 
       {/* Main content */}
-      <main className="flex min-h-screen bg-black w-full">
+      <main className="flex min-h-screen bg-black w-full justify-center items-center">
         <Outlet />
       </main>
 
