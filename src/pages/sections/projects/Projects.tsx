@@ -43,19 +43,20 @@ function Work() {
             </h3>
             <p className="text-white/80 mb-4 leading-relaxed">
               Designed and built a single-page portfolio showcasing skills and
-              projects with smooth animations.
+              projects with smooth animations.Leveraged React component
+              libraries to enhance interactivity and design
             </p>
             <p className="text-white/80 mb-4 leading-relaxed">
               Tech: React, TypeScript, Vite, Tailwind CSS
             </p>
             <a
-                href="https://github.com/tracyshrestha/tracy.shrestha-portfolio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-2 my-3 bg-white/90 hover:bg-white text-[#46376d] rounded-3xl hover:shadow-lg backdrop-blur-sm transition-all duration-200 font-medium"
-              >
-                View More
-              </a>
+              href="https://github.com/tracyshrestha/tracy.shrestha-portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-2 my-3 bg-white/90 hover:bg-white text-[#46376d] rounded-3xl hover:shadow-lg backdrop-blur-sm transition-all duration-200 font-medium"
+            >
+              View More
+            </a>
           </div>
           <div className="bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg p-6 shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group">
             <h3 className="text-xl font-bold mb-3 text-white group-hover:text-white/90 transition-colors">
@@ -63,8 +64,8 @@ function Work() {
             </h3>
             <p className="text-white/80 mb-4 leading-relaxed">
               Developed an open data portal with interactive charts and
-              multilingual support. Implemented population pyramid
-              visualizations using Recharts.
+              integrated EmailJS for contact form handling. Implemented
+              population pyramid visualizations using Recharts.
             </p>
             <p className="text-white/80 mb-4 leading-relaxed">
               Tech: React, Tailwind CSS, Recharts
