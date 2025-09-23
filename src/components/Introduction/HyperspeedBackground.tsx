@@ -1341,9 +1341,15 @@ const Hyperspeed: FC<HyperspeedProps> = ({ effectOptions = {} }) => {
     };
   }, [mergedOptions]);
 
-  return   <div className="flex items-center justify-center h-full">
-    <div id="lights" className="flex items-center justify-center w-full h-full" ref={hyperspeed}></div>
-  </div>
+  return (
+    <div className="flex items-center justify-center h-full">
+      <div
+        id="lights"
+        className="flex items-center justify-center w-full h-full"
+        ref={hyperspeed}
+      ></div>
+    </div>
+  );
 };
 
 export default Hyperspeed;

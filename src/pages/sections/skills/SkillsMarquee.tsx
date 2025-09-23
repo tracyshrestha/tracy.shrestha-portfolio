@@ -52,7 +52,11 @@ const tech3 = [
 ];
 
 // 🔹 Reusable SkillMarquee component
-const SkillMarquee = ({ items }: { items: { src: string; label: string }[] }) => (
+const SkillMarquee = ({
+  items,
+}: {
+  items: { src: string; label: string }[];
+}) => (
   <Marquee
     gradient={false}
     speed={50}
