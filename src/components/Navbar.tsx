@@ -27,9 +27,17 @@ function Navbar() {
         <div className="hidden md:flex">
           <ul className="flex space-x-6 text-[25px]">
             <li className="flex ">
-              <Link to="/" className="flex hover:underline">
+              <Link
+                to="/"
+                className="flex hover:underline"
+                onClick={() =>
+                  window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                  })
+                }
+              >
                 <MdHome className="mt-1" />
-                {/* Home */}
               </Link>
             </li>
             <li>
@@ -78,8 +86,14 @@ function Navbar() {
               <li>
                 <Link
                   to="/"
-                  className=" flex space-x-4 pt-2 hover:underline items-center"
-                  onClick={closeMenu}
+                  className="flex space-x-4 pt-2 hover:underline items-center"
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 0,
+                      behavior: "smooth",
+                    });
+                    closeMenu();
+                  }}
                 >
                   <MdHome className="mt-1" /> &nbsp; Home
                 </Link>
