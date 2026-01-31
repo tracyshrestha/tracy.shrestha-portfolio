@@ -2,13 +2,51 @@ import { SlLock } from "react-icons/sl";
 import { RiFileCopy2Fill } from "react-icons/ri";
 import { motion } from "framer-motion";
 
+// Data array
+const projects = [
+  {
+    title: "Portfolio",
+    description:
+      "Designed and built a single-page portfolio showcasing skills and projects with smooth animations.Leveraged React component libraries to enhance interactivity and design",
+    tech: "React, TypeScript, Vite, Tailwind CSS",
+    link: "https://github.com/tracyshrestha/tracy.shrestha-portfolio",
+  },
+  {
+    title: "Trello Kanban Board",
+    description:
+      "Developed a Trello-style Kanban board featuring drag-and-drop task management with persistent state storage. Includes a fully supported dark theme for improved usability.",
+    tech: "React, Shadcn UI, TypeScript, Zustand, Framer Motion",
+    link: "https://kanban-board-blush-six.vercel.app/",
+  },
+  {
+    title: "CRM System",
+    description:
+      "Built responsive interfaces for a client-facing CRM using React.js, Tailwind CSS, and ShadCN UI. Implemented role-based routing and dynamic sidebar with permissions.",
+    tech: "React, TypeScript, Tailwind, ShadCN/UI, REST API",
+    isPrivate: true,
+  },
+  {
+    title: "Blog Platform",
+    description:
+      "Developed a blog platform with JWT-based authentication, protected routes, and full CRUD functionality for blog posts. Focused on clean architecture, reusable custom hooks, and robust state management.",
+    tech: "React, ShadCN/UI, TypeScript, Zustand, JWT Auth",
+    link: "https://blog-app-ivory-two-35.vercel.app/",
+  },
+  {
+    title: "Open Data Portal",
+    description:
+      "Developed an open data portal with interactive charts and integrated EmailJS for contact form handling. Implemented population pyramid visualizations using Recharts.",
+    tech: "React, Tailwind CSS, Recharts",
+    isPrivate: true,
+  },
+];
+
 function Work() {
   return (
     <section className="text-white mx-12 items-center justify-center text-center">
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className=""
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
@@ -16,68 +54,39 @@ function Work() {
           <RiFileCopy2Fill className="pr-2 mb-1" />
           My Projects
         </h2>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 ">
-          <div className="bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg p-6 shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group">
-            <h3 className="text-xl font-bold mb-3 text-white group-hover:text-white/90 transition-colors">
-              CRM System
-            </h3>
-            <p className="text-white/80 mb-4 leading-relaxed">
-              Built responsive interfaces for a client-facing CRM using
-              React.js, Tailwind CSS, and ShadCN UI. Implemented role-based
-              routing and dynamic sidebar with permissions.
-            </p>
-            <p className="text-white/80 mb-4 leading-relaxed">
-              Tech: React, TypeScript, Tailwind, ShadCN/UI, REST API
-            </p>
-            <button
-              className="inline-flex items-center gap-2 px-6 py-2 bg-gray-500 text-[#46376d] rounded-3xl hover:shadow-lg backdrop-blur-sm transition-all duration-200 font-medium"
-              disabled
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg p-6 shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group"
             >
-              <SlLock />
-              <span>Private deployment for client use</span>
-            </button>
-          </div>
-          <div className="bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg p-6 shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group">
-            <h3 className="text-xl font-bold mb-3 text-white group-hover:text-white/90 transition-colors">
-              Portfolio
-            </h3>
-            <p className="text-white/80 mb-4 leading-relaxed">
-              Designed and built a single-page portfolio showcasing skills and
-              projects with smooth animations.Leveraged React component
-              libraries to enhance interactivity and design
-            </p>
-            <p className="text-white/80 mb-4 leading-relaxed">
-              Tech: React, TypeScript, Vite, Tailwind CSS
-            </p>
-            <a
-              href="https://github.com/tracyshrestha/tracy.shrestha-portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-6 py-2 my-3 bg-white/90 hover:bg-white text-[#46376d] rounded-3xl hover:shadow-lg backdrop-blur-sm transition-all duration-200 font-medium"
-            >
-              View More
-            </a>
-          </div>
-          <div className="bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg p-6 shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group">
-            <h3 className="text-xl font-bold mb-3 text-white group-hover:text-white/90 transition-colors">
-              Open Data Portal
-            </h3>
-            <p className="text-white/80 mb-4 leading-relaxed">
-              Developed an open data portal with interactive charts and
-              integrated EmailJS for contact form handling. Implemented
-              population pyramid visualizations using Recharts.
-            </p>
-            <p className="text-white/80 mb-4 leading-relaxed">
-              Tech: React, Tailwind CSS, Recharts
-            </p>
-            <button
-              className="inline-flex items-center gap-2 px-6 py-2 bg-gray-500 text-[#46376d] rounded-3xl hover:shadow-lg backdrop-blur-sm transition-all duration-200 font-medium"
-              disabled
-            >
-              <SlLock />
-              <span>Private deployment for client use</span>
-            </button>
-          </div>
+              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-white/90 transition-colors">
+                {project.title}
+              </h3>
+              <p className="text-white/80 mb-4 leading-relaxed">{project.description}</p>
+              <p className="text-white/80 mb-4 leading-relaxed">Tech: {project.tech}</p>
+
+              {project.isPrivate ? (
+                <button
+                  className="inline-flex items-center gap-2 px-6 py-2 bg-gray-500 text-[#46376d] rounded-3xl hover:shadow-lg backdrop-blur-sm transition-all duration-200 font-medium"
+                  disabled
+                >
+                  <SlLock />
+                  <span>Private deployment for client use</span>
+                </button>
+              ) : (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-2 bg-white/90 text-[#46376d] rounded-3xl hover:bg-white hover:shadow-lg backdrop-blur-sm transition-all duration-200 font-medium"
+                >
+                  View Live Project
+                </a>
+              )}
+            </div>
+          ))}
         </div>
       </motion.div>
     </section>
