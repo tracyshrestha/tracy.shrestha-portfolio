@@ -16,17 +16,6 @@ function Footer() {
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
         </div>
 
-        <div className="absolute -top-5 right-10 z-50">
-          <button
-            onClick={() => setIsPopoverOpen(true)}
-            className="flex text-xl bg-[#974087] hover:bg-[#873979] text-white py-1 px-3 rounded-full shadow-lg transition"
-            title="Send Message"
-          >
-            <TbMessageCirclePlus className="mt-1" />
-            &nbsp;Message Me
-          </button>
-        </div>
-
         {/* Content */}
         <div className="relative flex z-10 sm:flex-row flex-col justify-between items-center ">
           <div className="w-2/6   items-center text-center hidden sm:block">
@@ -104,9 +93,27 @@ function Footer() {
         </div>
       </footer>
 
+      {/* Floating message button — fixed bottom-right */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <button
+          onClick={() => setIsPopoverOpen(true)}
+          className="flex items-center gap-2 text-lg bg-[#974087] hover:bg-[#873979] text-white py-3 px-4 rounded-full shadow-lg transition-transform hover:scale-105"
+          title="Send Message"
+          aria-label="Send Message"
+        >
+          <TbMessageCirclePlus className="text-xl" />
+        </button>
+      </div>
+
       {isPopoverOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100]">
-          <div className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto">
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100]"
+          onClick={() => setIsPopoverOpen(false)}
+        >
+          <div
+            className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             <EmailForm onClose={() => setIsPopoverOpen(false)} />
           </div>
         </div>

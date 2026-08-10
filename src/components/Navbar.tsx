@@ -2,7 +2,12 @@ import { Link } from "react-router-dom";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { useState } from "react";
-import { MdHome } from "react-icons/md";
+import { MdHome, MdDownload } from "react-icons/md";
+
+const CV_HREF = encodeURI(
+  "/Frontend Developer- Tracy Shrestha Resume.pdf",
+);
+const CV_FILENAME = "Tracy-Shrestha-Resume.pdf";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,7 +30,7 @@ function Navbar() {
           Tracy
         </h1>
         <div className="hidden md:flex">
-          <ul className="flex space-x-6 text-[25px]">
+          <ul className="flex items-center space-x-6 text-[25px]">
             <li className="flex ">
               <Link
                 to="/"
@@ -58,6 +63,16 @@ function Navbar() {
                 className="lexusText italic hover:underline"
               >
                 <FaGithub className="mt-1" />
+              </a>
+            </li>
+            <li>
+              <a
+                href={CV_HREF}
+                download={CV_FILENAME}
+                className="lexusText italic hover:underline"
+                title="Download CV"
+              >
+                <MdDownload className="mt-1" />
               </a>
             </li>
           </ul>
@@ -118,6 +133,16 @@ function Navbar() {
                   onClick={closeMenu}
                 >
                   <FaGithub className="mr-2" /> GitHub
+                </a>
+              </li>
+              <li className="flex space-x-4 pt-2">
+                <a
+                  href={CV_HREF}
+                  download={CV_FILENAME}
+                  className="hover:underline flex items-center"
+                  onClick={closeMenu}
+                >
+                  <MdDownload className="mr-2" /> Download CV
                 </a>
               </li>
             </ul>
