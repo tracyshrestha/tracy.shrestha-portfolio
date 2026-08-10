@@ -46,7 +46,7 @@ function CursorCometTrail() {
     const onMove = (e: MouseEvent) => {
       mouse = { x: e.clientX, y: e.clientY };
       const now = performance.now();
-      if (now - lastSpawn > 14) {
+      if (now - lastSpawn > 10) {
         lastSpawn = now;
         particles.push({
           x: e.clientX,
@@ -54,7 +54,7 @@ function CursorCometTrail() {
           life: 1,
           size: 7 + Math.random() * 6,
         });
-        if (particles.length > 48) particles.shift();
+        if (particles.length > 90) particles.shift();
       }
     };
 
@@ -63,7 +63,7 @@ function CursorCometTrail() {
 
       for (let i = particles.length - 1; i >= 0; i--) {
         const p = particles[i];
-        p.life -= 0.028;
+        p.life -= 0.016;
         if (p.life <= 0) {
           particles.splice(i, 1);
           continue;

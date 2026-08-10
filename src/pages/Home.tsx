@@ -1,11 +1,10 @@
-import Projects from "./sections/projects/Projects";
-import ProjectSwiper from "./sections/projects/ProjectSwiper";
+import ProjectsV2 from "./sections/v2/ProjectsV2";
+import ProjectSwiperV2 from "./sections/v2/ProjectSwiperV2";
 import NewSkills from "./sections/skills/SkillsMarquee";
 import Intro from "../components/Introduction/Intro";
-import About from "./sections/About";
-import Education from "./sections/Education";
-import Experience from "./sections/ExperienceCard";
-// import Contact from "./sections/Contact";
+import About from "./sections/v2/AboutV2";
+import Education from "./sections/v2/EducationV2";
+import Experience from "./sections/v2/ExperienceV2";
 
 function Home() {
   return (
@@ -16,11 +15,11 @@ function Home() {
       <div className="pt-10">
         <About />
       </div>
-      <div className="lg:w-full flex flex-col md:flex-row  md:justify-around  ">
-        <div className="md:w-1/2 w-full">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 sm:px-6 md:flex-row md:items-stretch md:justify-center md:gap-8 lg:px-8">
+        <div className="w-full min-w-0 md:w-1/2">
           <Education />
         </div>
-        <div className="md:w-1/2 w-full">
+        <div className="w-full min-w-0 md:w-1/2">
           <Experience />
         </div>
       </div>
@@ -28,11 +27,11 @@ function Home() {
       <div className="py-10 ">
         <NewSkills />
       </div>
-      <div className="pt-3 pb-12 lg:hidden block">
-        <Projects />
+      <div className="pt-3 pb-12 lg:hidden">
+        <ProjectsV2 />
       </div>
-      <div className="pt-2 pb-12 hidden lg:block">
-        <ProjectSwiper />
+      <div className="hidden pt-2 pb-12 lg:block">
+        <ProjectSwiperV2 />
       </div>
     </div>
   );
