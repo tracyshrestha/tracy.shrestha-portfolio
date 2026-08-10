@@ -3,31 +3,30 @@ import { FaTools } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 // languages
-import jsLogo from "../../../assets/skills/js.svg";
-import tsLogo from "../../../assets/skills/typescript.svg";
-import htmlLogo from "../../../assets/skills/html-5.svg";
-import cssLogo from "../../../assets/skills/css-3.svg";
+import jsLogo from "@/assets/skills/js.svg";
+import tsLogo from "@/assets/skills/typescript.svg";
+import htmlLogo from "@/assets/skills/html-5.svg";
+import cssLogo from "@/assets/skills/css-3.svg";
 
 // frameworks and languages
-import reactLogo from "../../../assets/skills/react2.svg";
-import vueLogo from "../../../assets/skills/vue.svg";
-import nextjsLogo from "../../../assets/skills/nextjs.svg";
-import tailwindLogo from "../../../assets/skills/tailwind.svg";
-import bootstrapLogo from "../../../assets/skills/bootstrap.svg";
+import reactLogo from "@/assets/skills/react2.svg";
+import vueLogo from "@/assets/skills/vue.svg";
+import nextjsLogo from "@/assets/skills/nextjs.svg";
+import tailwindLogo from "@/assets/skills/tailwind.svg";
+import bootstrapLogo from "@/assets/skills/bootstrap.svg";
 
 // state management
-import reduxLogo from "../../../assets/skills/redux.svg";
-import shadcnLogo from "../../../assets/skills/shadcn.png";
+import reduxLogo from "@/assets/skills/redux.svg";
+import shadcnLogo from "@/assets/skills/shadcn.png";
 
 // tools and platforms
-import gitLogo from "../../../assets/skills/git.svg";
-import githubLogo from "../../../assets/skills/github.svg";
-import npmLogo from "../../../assets/skills/npm.svg";
-import viteLogo from "../../../assets/skills/vite.svg";
+import gitLogo from "@/assets/skills/git.svg";
+import githubLogo from "@/assets/skills/github.svg";
+import npmLogo from "@/assets/skills/npm.svg";
+import viteLogo from "@/assets/skills/vite.svg";
 
 // design collaboration
-import figmaLogo from "../../../assets/skills/figma.svg";
-
+import figmaLogo from "@/assets/skills/figma.svg";
 const tech = [
   { src: jsLogo, label: "JavaScript" },
   { src: tsLogo, label: "TypeScript" },

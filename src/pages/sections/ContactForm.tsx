@@ -1,48 +1,13 @@
-"use client";
-
 import type React from "react";
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { X, Mic, MicOff } from "lucide-react";
-import { Toast, useToast } from "../../components/ui/Toast";
+import { Toast, useToast } from "@/components/ui/Toast";
+import { useSpeechToText } from "@/hooks/useSpeechToText";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 
 interface EmailFormProps {
   onClose?: () => void;
-}
-
-type SpeechRecognitionInstance = {
-  continuous: boolean;
-  interimResults: boolean;
-  lang: string;
-  start: () => void;
-  stop: () => void;
-  abort: () => void;
-  onresult: ((event: SpeechRecognitionEventLike) => void) | null;
-  onerror: ((event: { error: string }) => void) | null;
-  onend: (() => void) | null;
-};
-
-type SpeechRecognitionEventLike = {
-  resultIndex: number;
-  results: {
-    length: number;
-    [index: number]: {
-      isFinal: boolean;
-      [index: number]: { transcript: string };
-    };
-  };
-};
-
-function getSpeechRecognition():
-  | (new () => SpeechRecognitionInstance)
-  | null {
-  if (typeof window === "undefined") return null;
-  const w = window as Window & {
-    SpeechRecognition?: new () => SpeechRecognitionInstance;
-    webkitSpeechRecognition?: new () => SpeechRecognitionInstance;
-  };
-  return w.SpeechRecognition ?? w.webkitSpeechRecognition ?? null;
 }
 
 function EmailForm({ onClose }: EmailFormProps) {
@@ -53,143 +18,25 @@ function EmailForm({ onClose }: EmailFormProps) {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showInfoPopup, setShowInfoPopup] = useState(false);
-  const [isListening, setIsListening] = useState(false);
-  const [listenSecondsLeft, setListenSecondsLeft] = useState(30);
   const [showMicTip, setShowMicTip] = useState(false);
   const { toast, showToast, hideToast } = useToast();
   const popupRef = useRef<HTMLDivElement>(null);
-  const recognitionRef = useRef<SpeechRecognitionInstance | null>(null);
-  const baseMessageRef = useRef("");
-  const listenTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const listenIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const MAX_LISTEN_MS = 30_000;
-  const MAX_LISTEN_SEC = 30;
+
+  const {
+    isListening,
+    listenSecondsLeft,
+    stopListening,
+    toggleListening,
+  } = useSpeechToText({
+    onTranscript: (text) =>
+      setFormData((prev) => ({ ...prev, message: text })),
+    onError: (message) => showToast(message, "error"),
+  });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const clearListenTimers = useCallback(() => {
-    if (listenTimeoutRef.current) {
-      clearTimeout(listenTimeoutRef.current);
-      listenTimeoutRef.current = null;
-    }
-    if (listenIntervalRef.current) {
-      clearInterval(listenIntervalRef.current);
-      listenIntervalRef.current = null;
-    }
-  }, []);
-
-  const stopListening = useCallback(() => {
-    clearListenTimers();
-    const recognition = recognitionRef.current;
-    recognitionRef.current = null;
-    recognition?.stop();
-    setIsListening(false);
-    setListenSecondsLeft(MAX_LISTEN_SEC);
-  }, [clearListenTimers]);
-
-  const startListening = useCallback(() => {
-    const SpeechRecognitionCtor = getSpeechRecognition();
-    if (!SpeechRecognitionCtor) {
-      showToast("Speech recognition is not supported in this browser", "error");
-      return;
-    }
-
-    // Stop any existing session first
-    clearListenTimers();
-    recognitionRef.current?.abort();
-    recognitionRef.current = null;
-
-    const recognition = new SpeechRecognitionCtor();
-    recognition.continuous = true;
-    recognition.interimResults = true;
-    recognition.lang = "en-US";
-
-    baseMessageRef.current = formData.message;
-
-    recognition.onresult = (event: SpeechRecognitionEventLike) => {
-      let finalTranscript = "";
-      let interimTranscript = "";
-
-      for (let i = event.resultIndex; i < event.results.length; i++) {
-        const transcript = event.results[i][0].transcript;
-        if (event.results[i].isFinal) {
-          finalTranscript += transcript;
-        } else {
-          interimTranscript += transcript;
-        }
-      }
-
-      if (finalTranscript) {
-        const separator = baseMessageRef.current.trim() ? " " : "";
-        baseMessageRef.current =
-          baseMessageRef.current + separator + finalTranscript.trim();
-      }
-
-      const interim = interimTranscript.trim();
-      const nextMessage = interim
-        ? `${baseMessageRef.current}${
-            baseMessageRef.current.trim() ? " " : ""
-          }${interim}`
-        : baseMessageRef.current;
-
-      setFormData((prev) => ({ ...prev, message: nextMessage }));
-    };
-
-    recognition.onerror = (event: { error: string }) => {
-      if (event.error === "aborted") return;
-      if (event.error === "not-allowed") {
-        showToast("Microphone permission denied", "error");
-      } else if (event.error !== "no-speech") {
-        showToast("Speech recognition error", "error");
-      }
-      clearListenTimers();
-      recognitionRef.current = null;
-      setIsListening(false);
-      setListenSecondsLeft(MAX_LISTEN_SEC);
-    };
-
-    recognition.onend = () => {
-      // Only clear if this is still the active session
-      if (recognitionRef.current === recognition) {
-        recognitionRef.current = null;
-      }
-      clearListenTimers();
-      setIsListening(false);
-      setListenSecondsLeft(MAX_LISTEN_SEC);
-    };
-
-    try {
-      recognition.start();
-      recognitionRef.current = recognition;
-      setIsListening(true);
-      setListenSecondsLeft(MAX_LISTEN_SEC);
-
-      const startedAt = Date.now();
-      listenIntervalRef.current = setInterval(() => {
-        const elapsed = Math.floor((Date.now() - startedAt) / 1000);
-        setListenSecondsLeft(Math.max(0, MAX_LISTEN_SEC - elapsed));
-      }, 250);
-
-      listenTimeoutRef.current = setTimeout(() => {
-        stopListening();
-      }, MAX_LISTEN_MS);
-    } catch {
-      showToast("Could not start speech recognition", "error");
-      setIsListening(false);
-    }
-  }, [clearListenTimers, formData.message, showToast, stopListening]);
-
-  const toggleListening = () => {
-    setShowMicTip(false);
-    if (isListening) {
-      stopListening();
-    } else {
-      startListening();
-    }
   };
 
   // Soft prompt for the mic when the modal first opens
@@ -218,14 +65,6 @@ function EmailForm({ onClose }: EmailFormProps) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
-  // Cleanup speech recognition on unmount
-  useEffect(() => {
-    return () => {
-      clearListenTimers();
-      recognitionRef.current?.abort();
-    };
-  }, [clearListenTimers]);
 
   const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -352,7 +191,10 @@ function EmailForm({ onClose }: EmailFormProps) {
                   <div className="flex items-center gap-2 min-h-[28px] min-w-0">
                     {isListening && (
                       <>
-                        <span className="flex items-end gap-[3px] h-3.5" aria-hidden>
+                        <span
+                          className="flex items-end gap-[3px] h-3.5"
+                          aria-hidden
+                        >
                           {[0, 1, 2, 3].map((i) => (
                             <span
                               key={i}
@@ -401,7 +243,10 @@ function EmailForm({ onClose }: EmailFormProps) {
                     )}
                     <button
                       type="button"
-                      onClick={toggleListening}
+                      onClick={() => {
+                        setShowMicTip(false);
+                        toggleListening(formData.message);
+                      }}
                       aria-pressed={isListening}
                       aria-label={
                         isListening
@@ -428,7 +273,8 @@ function EmailForm({ onClose }: EmailFormProps) {
                         <Mic size={14} strokeWidth={2.25} />
                       )}
                     </button>
-                  </div>                </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
