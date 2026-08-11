@@ -10,10 +10,13 @@ function Footer() {
 
   return (
     <>
-      <footer className="bg-black text-center py-4 mt-auto border-t relative pt-10">
-        {/* Grid background */}
-        <div className="absolute inset-0 h-full w-full bg-slate-950">
-          <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+      <footer className="relative mt-auto border-t border-brand-500/20 bg-black py-4 pt-10 text-center">
+        {/* Theme-matched atmosphere: black + brand tint + soft grid */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+          <div className="absolute inset-0 bg-black" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_100%,rgba(159,67,138,0.22),transparent_65%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(159,67,138,0.08),transparent_40%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(159,67,138,0.16)_1px,transparent_1px),linear-gradient(to_bottom,rgba(159,67,138,0.16)_1px,transparent_1px)] bg-[size:28px_28px] [mask-image:radial-gradient(ellipse_70%_80%_at_50%_50%,#000_35%,transparent_100%)]" />
         </div>
 
         {/* Content */}
