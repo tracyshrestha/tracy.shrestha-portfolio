@@ -1,20 +1,25 @@
 import { IoCallSharp } from "react-icons/io5";
 import { CgWebsite } from "react-icons/cg";
-import { MdAttachEmail } from "react-icons/md";
+import { MdAttachEmail, MdDownload } from "react-icons/md";
+
+const CV_HREF = encodeURI(
+  "/Frontend Developer- Tracy Shrestha Resume.pdf",
+);
+const CV_FILENAME = "Tracy-Shrestha-Resume.pdf";
 
 function Contact() {
   return (
-    <section className="text-white mx-12 items-center justify-center text-center">
-      <h2 className="text-4xl font-semibold mb-8 text-white items-center justify-center text-center">
+    <section className="text-ink mx-12 items-center justify-center text-center">
+      <h2 className="text-4xl font-semibold mb-8 text-ink items-center justify-center text-center">
         Contact Me
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
         <div className="bg-[#9F438A]/20 backdrop-blur-md border border-[#9F438A]/30 rounded-lg p-6 shadow-xl hover:bg-[#9F438A]/30 hover:border-[#9F438A]/40 transition-all duration-300 group">
-          <div className="flex w-full  flex-col justify-center items-center pt-5 sm:pt-0 pb-2 text-white">
+          <div className="flex w-full  flex-col justify-center items-center pt-5 sm:pt-0 pb-2 text-ink">
             <div className="text-xl font-bold pb-3 w-full text-left">
               <p className="text-center">Contact Me</p>
 
-              <hr className="border-white m-5  w-full" />
+              <hr className="border-ink/40 m-5  w-full" />
             </div>
 
             <div className="flex flex-col justify-center align-center text-left">
@@ -46,6 +51,15 @@ function Contact() {
                 <MdAttachEmail />
                 <p className="pl-2">tracysh99@gmail.com</p>
               </div>
+              <a
+                href={CV_HREF}
+                download={CV_FILENAME}
+                className="mt-2 flex cursor-pointer items-center hover:underline"
+                title="Download CV"
+              >
+                <MdDownload />
+                <p className="pl-2">Download CV</p>
+              </a>
             </div>
           </div>
         </div>

@@ -28,7 +28,7 @@ function EducationV2() {
         viewport={{ once: true, margin: "-40px" }}
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
-        <div className="mb-8 flex items-center justify-center gap-2 text-white">
+        <div className="mb-8 flex items-center justify-center gap-2 text-ink">
           <FaGraduationCap className="text-3xl text-brand-300" aria-hidden />
           <h2
             id="education-v2-heading"
@@ -41,7 +41,7 @@ function EducationV2() {
         <ul className="flex flex-col gap-5">
           {education.map((item) => (
             <li key={item.degree}>
-              <article className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.06] to-transparent transition-all duration-300 hover:border-brand-400/35 hover:shadow-[0_0_40px_-12px_rgba(159, 67, 138,0.45)]">
+              <article className="card-surface-br group relative overflow-hidden rounded-2xl transition-all duration-300 hover:border-brand-400/45 hover:shadow-[0_0_40px_-12px_rgba(159, 67, 138,0.45)]">
                 <div
                   aria-hidden
                   className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-400/70 to-transparent"
@@ -58,17 +58,17 @@ function EducationV2() {
 
                   <div className="min-w-0 flex-1 text-left">
                     <div className="mb-2 flex flex-wrap items-start justify-between gap-2">
-                      <h3 className="text-xl font-semibold leading-snug text-white sm:text-2xl">
+                      <h3 className="text-xl font-semibold leading-snug text-ink sm:text-2xl">
                         {item.degree}
                       </h3>
                       <span className="shrink-0 rounded-md bg-brand-500/20 px-2.5 py-1 text-sm font-medium tabular-nums text-brand-200">
                         {item.yearOut}
                       </span>
                     </div>
-                    <p className="text-lg leading-relaxed text-white/75">
+                    <p className="text-lg leading-relaxed text-ink/75">
                       {item.school}
                     </p>
-                    <p className="mt-0.5 text-base text-white/50">
+                    <p className="mt-0.5 text-base text-ink/50">
                       {item.university}
                     </p>
                     <p className="mt-4 text-sm tracking-wide text-brand-300/80">

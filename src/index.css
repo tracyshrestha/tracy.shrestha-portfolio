@@ -9,13 +9,62 @@
   --brand: #9f438a;
   --brand-hover: #8a3878;
   --brand-rgb: 159, 67, 138;
+
+  /* Semantic surfaces — dark default */
+  --surface: #000000;
+  --ink: #ffffff;
+  --brand-100: #f5e0ee;
+  --brand-200: #ebc4df;
+  --brand-300: #dba3cc;
+  --navbar: #000000;
+  --navbar-ink: #ffffff;
+  --footer-grid: rgba(159, 67, 138, 0.16);
+  --footer-glow: rgba(159, 67, 138, 0.22);
+  --footer-bg: #000000;
+  --footer-ink: #ffffff;
+
+  /* Cards — soft white glass on black */
+  --card-bg: rgb(255 255 255 / 0.035);
+  --card-bg-from: rgb(255 255 255 / 0.07);
+  --card-bg-via: rgb(255 255 255 / 0.03);
+  --card-border: rgb(255 255 255 / 0.1);
+  --card-chip: rgb(255 255 255 / 0.06);
+  --card-glow: rgb(159 67 138 / 0.35);
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  /* Pink page canvas; white cards sit on top */
+  --surface: #ebc4df;
+  --ink: #2a1524;
+  /* Page accents (section titles on soft pink) */
+  --brand-100: #3d1936;
+  --brand-200: #55234b;
+  --brand-300: #6e2d62;
+  --ink: #2a1524;
+  --navbar: #9f438a;
+  --navbar-ink: #ffffff;
+  --footer-grid: rgba(255, 255, 255, 0.14);
+  --footer-glow: rgba(255, 255, 255, 0.12);
+  /* Darker pink brand bar for contrast + white type */
+  --footer-bg: #6e2d62;
+  --footer-ink: #ffffff;
+
+  /* Cards — same pink family as page (no white fill) */
+  --card-bg: #ebc4df;
+  --card-bg-from: #f0d0e6;
+  --card-bg-via: #e5b7d8;
+  --card-border: rgb(110 45 98 / 0.35);
+  --card-chip: rgb(110 45 98 / 0.14);
+  --card-glow: rgb(110 45 98 / 0.5);
+  color-scheme: light;
 }
 
 @theme {
   --color-brand-50: #faf0f7;
-  --color-brand-100: #f5e0ee;
-  --color-brand-200: #ebc4df;
-  --color-brand-300: #dba3cc;
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
   --color-brand-400: #c46bb0;
   --color-brand-500: #9f438a;
   --color-brand-600: #8a3878;
@@ -23,8 +72,241 @@
   --color-brand-800: #55234b;
   --color-brand-900: #3d1936;
   --color-brand: #9f438a;
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-navbar: var(--navbar);
+  --color-navbar-ink: var(--navbar-ink);
+  --color-footer: var(--footer-bg);
+  --color-footer-ink: var(--footer-ink);
+}
+
+html {
+  background-color: var(--surface);
 }
 
 body {
   font-family: var(--font-sans);
+  background-color: var(--surface);
+  color: var(--ink);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+/*
+ * Shared card skins — glass + edge light + soft brand wash
+ * (mirrors dark-mode project/education “design language”)
+ */
+.card-surface,
+.card-surface-gradient,
+.card-surface-br {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  box-shadow:
+    0 0 0 1px rgb(159 67 138 / 0.08),
+    0 18px 40px -28px var(--card-glow);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+/* Top hairline shimmer (dark-mode style) */
+.card-surface::before,
+.card-surface-gradient::before,
+.card-surface-br::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  z-index: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgb(196 107 176 / 0.75),
+    transparent
+  );
+  opacity: 0.85;
+}
+
+/* Soft orbit glow */
+.card-surface::after,
+.card-surface-gradient::after,
+.card-surface-br::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+  top: -2.5rem;
+  right: -2.5rem;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 9999px;
+  background: rgb(196 107 176 / 0.28);
+  filter: blur(28px);
+}
+
+.card-surface {
+  background:
+    radial-gradient(
+      ellipse 80% 70% at 0% 0%,
+      rgb(159 67 138 / 0.2),
+      transparent 55%
+    ),
+    var(--card-bg);
+}
+
+.card-surface-gradient {
+  background:
+    radial-gradient(
+      ellipse 70% 55% at 100% 0%,
+      rgb(196 107 176 / 0.35),
+      transparent 50%
+    ),
+    linear-gradient(
+      to bottom,
+      var(--card-bg-from),
+      var(--card-bg-via),
+      color-mix(in srgb, var(--card-bg) 70%, transparent)
+    );
+}
+
+.card-surface-br {
+  background:
+    radial-gradient(
+      ellipse 65% 50% at 100% 0%,
+      rgb(196 107 176 / 0.32),
+      transparent 55%
+    ),
+    linear-gradient(
+      to bottom right,
+      var(--card-bg-from),
+      color-mix(in srgb, var(--card-bg) 55%, transparent)
+    );
+}
+
+.card-chip {
+  border: 1px solid var(--card-border);
+  background: var(--card-chip);
+}
+
+/*
+ * Light mode: pink cards matching page + darker purple highlights only.
+ */
+html[data-theme="light"] .card-surface,
+html[data-theme="light"] .card-surface-gradient,
+html[data-theme="light"] .card-surface-br {
+  color: #2a1524;
+  --ink: #2a1524;
+  --color-ink: #2a1524;
+  --brand-100: #3d1936;
+  --brand-200: #55234b;
+  --brand-300: #6e2d62;
+  --color-brand-100: #3d1936;
+  --color-brand-200: #55234b;
+  --color-brand-300: #6e2d62;
+  --color-brand-400: #8a3878;
+  border-color: rgb(110 45 98 / 0.4);
+  box-shadow:
+    0 0 0 1px rgb(110 45 98 / 0.16),
+    0 20px 44px -20px rgb(85 35 75 / 0.45);
+}
+
+html[data-theme="light"] .card-surface {
+  background:
+    radial-gradient(
+      ellipse 85% 75% at 0% 0%,
+      rgb(110 45 98 / 0.28),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 75% 60% at 100% 0%,
+      rgb(138 56 120 / 0.24),
+      transparent 50%
+    ),
+    linear-gradient(165deg, #f0d0e6 0%, #ebc4df 55%, #e5b7d8 100%);
+}
+
+html[data-theme="light"] .card-surface-gradient {
+  background:
+    radial-gradient(
+      ellipse 75% 60% at 100% 0%,
+      rgb(110 45 98 / 0.32),
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 0% 100%,
+      rgb(138 56 120 / 0.22),
+      transparent 55%
+    ),
+    linear-gradient(to bottom, #f0d0e6, #ebc4df, #e3b0d4);
+}
+
+html[data-theme="light"] .card-surface-br {
+  background:
+    radial-gradient(
+      ellipse 70% 55% at 100% 0%,
+      rgb(110 45 98 / 0.3),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 55% 45% at 0% 100%,
+      rgb(138 56 120 / 0.2),
+      transparent 50%
+    ),
+    linear-gradient(to bottom right, #f0d0e6, #ebc4df);
+}
+
+/* Darker brand hairline */
+html[data-theme="light"] .card-surface::before,
+html[data-theme="light"] .card-surface-gradient::before,
+html[data-theme="light"] .card-surface-br::before {
+  height: 2px;
+  opacity: 1;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgb(110 45 98 / 0.9),
+    rgb(85 35 75 / 0.95),
+    rgb(110 45 98 / 0.9),
+    transparent
+  );
+}
+
+/* Darker brand orbit glow */
+html[data-theme="light"] .card-surface::after,
+html[data-theme="light"] .card-surface-gradient::after,
+html[data-theme="light"] .card-surface-br::after {
+  width: 9rem;
+  height: 9rem;
+  background: rgb(110 45 98 / 0.48);
+  filter: blur(32px);
+}
+
+html[data-theme="light"] .card-chip {
+  border-color: rgb(110 45 98 / 0.32);
+  background: rgb(110 45 98 / 0.14);
+  color: #3d1936;
+}
+
+html[data-theme="light"] .card-chip.private-badge,
+html[data-theme="light"] .private-badge {
+  color: #ffe3f4;
+  border-color: rgb(255 227 244 / 0.7);
+  background: rgb(159 67 138 / 0.28);
+}
+
+html[data-theme="light"] .card-surface:hover,
+html[data-theme="light"] .card-surface-gradient:hover,
+html[data-theme="light"] .card-surface-br:hover {
+  border-color: rgb(110 45 98 / 0.55);
+  box-shadow:
+    0 0 0 1px rgb(110 45 98 / 0.28),
+    0 26px 52px -20px rgb(85 35 75 / 0.55);
 }
