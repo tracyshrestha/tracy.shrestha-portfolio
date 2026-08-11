@@ -107,7 +107,7 @@ function Footer() {
 
       {isPopoverOpen && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/25"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/75"
           onClick={() => setIsPopoverOpen(false)}
         >
           <div
