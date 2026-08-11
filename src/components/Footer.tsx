@@ -10,10 +10,13 @@ function Footer() {
 
   return (
     <>
-      <footer className="bg-black text-center py-4 mt-auto border-t relative pt-10">
-        {/* Grid background */}
-        <div className="absolute inset-0 h-full w-full bg-slate-950">
-          <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+      <footer className="relative mt-auto border-t border-brand-500/20 bg-black py-4 pt-10 text-center">
+        {/* Theme-matched atmosphere: black + brand tint + soft grid */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+          <div className="absolute inset-0 bg-black" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_100%,rgba(159,67,138,0.22),transparent_65%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(159,67,138,0.08),transparent_40%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(159,67,138,0.16)_1px,transparent_1px),linear-gradient(to_bottom,rgba(159,67,138,0.16)_1px,transparent_1px)] bg-[size:28px_28px] [mask-image:radial-gradient(ellipse_70%_80%_at_50%_50%,#000_35%,transparent_100%)]" />
         </div>
 
         {/* Content */}
@@ -97,7 +100,7 @@ function Footer() {
       <div className="fixed bottom-6 right-6 z-50">
         <button
           onClick={() => setIsPopoverOpen(true)}
-          className="flex items-center gap-2 text-lg bg-[#974087] hover:bg-[#873979] text-white py-3 px-4 rounded-full shadow-lg transition-transform hover:scale-105"
+          className="flex items-center gap-2 text-lg bg-[#9F438A] hover:bg-[#8A3878] text-white py-3 px-4 rounded-full shadow-lg transition-transform hover:scale-105"
           title="Send Message"
           aria-label="Send Message"
         >
@@ -107,11 +110,11 @@ function Footer() {
 
       {isPopoverOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100]"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/75"
           onClick={() => setIsPopoverOpen(false)}
         >
           <div
-            className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto"
+            className="mx-4 max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-lg bg-white shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
             <EmailForm onClose={() => setIsPopoverOpen(false)} />

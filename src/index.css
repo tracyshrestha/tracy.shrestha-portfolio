@@ -4,6 +4,25 @@
 :root {
   --font-sans: "Markazi Text", sans-serif;
   --font-pacifico: "Pacifico", cursive;
+
+  /* Brand purple */
+  --brand: #9f438a;
+  --brand-hover: #8a3878;
+  --brand-rgb: 159, 67, 138;
+}
+
+@theme {
+  --color-brand-50: #faf0f7;
+  --color-brand-100: #f5e0ee;
+  --color-brand-200: #ebc4df;
+  --color-brand-300: #dba3cc;
+  --color-brand-400: #c46bb0;
+  --color-brand-500: #9f438a;
+  --color-brand-600: #8a3878;
+  --color-brand-700: #6e2d62;
+  --color-brand-800: #55234b;
+  --color-brand-900: #3d1936;
+  --color-brand: #9f438a;
 }
 
 body {

@@ -14,7 +14,7 @@ function ExperienceTimeline() {
           <ImBriefcase className="pr-2 mb-1" />
           Experience
         </h2>
-        <div className="w-full flex flex-col gap-5    p-6 bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group justify-center items-center">
+        <div className="w-full flex flex-col gap-5    p-6 bg-[#9F438A]/20 backdrop-blur-md border border-[#9F438A]/30 rounded-lg shadow-xl hover:bg-[#9F438A]/30 hover:border-[#9F438A]/40 transition-all duration-300 group justify-center items-center">
           <div className="flex flex-col px-8 ">
             {/* Card */}
             <div className="flex-1 pb-1 relative">

@@ -14,8 +14,8 @@ function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg p-6 shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group">
-            {/* <div className="bg-[#46376d]/20 backdrop-blur-md border-2 border-[#C758AE] rounded-lg p-6 shadow-xl hover:bg-[#46376d]/30 hover:border-[#c23fa3]  transition-all duration-300 group "> */}
+          <div className="bg-[#9F438A]/20 backdrop-blur-md border border-[#9F438A]/30 rounded-lg p-6 shadow-xl hover:bg-[#9F438A]/30 hover:border-[#9F438A]/40 transition-all duration-300 group">
+            {/* <div className="bg-[#9F438A]/20 backdrop-blur-md border-2 border-[#C758AE] rounded-lg p-6 shadow-xl hover:bg-[#9F438A]/30 hover:border-[#c23fa3]  transition-all duration-300 group "> */}
             <p className="text-white/80 mb-4 leading-relaxed text-xl">
               I’m a frontend developer with experience building scalable web
               apps using modern frameworks like React, Next.js, and Vue. I focus

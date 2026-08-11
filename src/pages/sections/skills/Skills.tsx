@@ -17,7 +17,7 @@ function Skills() {
           My Skills
         </h2>
         <div className="flex flex-col gap-5 ">
-          <div className="bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg p-6 shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group">
+          <div className="bg-[#9F438A]/20 backdrop-blur-md border border-[#9F438A]/30 rounded-lg p-6 shadow-xl hover:bg-[#9F438A]/30 hover:border-[#9F438A]/40 transition-all duration-300 group">
             <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-white/90 transition-colors">
               Frontend
             </h3>
@@ -26,7 +26,7 @@ function Skills() {
               CSS, Tailwind CSS, Sass, ShadCN/UI
             </p>
           </div>
-          {/* <div className="bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg p-6 shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group">
+          {/* <div className="bg-[#9F438A]/20 backdrop-blur-md border border-[#9F438A]/30 rounded-lg p-6 shadow-xl hover:bg-[#9F438A]/30 hover:border-[#9F438A]/40 transition-all duration-300 group">
           <h3 className="text-xl font-bold mb-3 text-white group-hover:text-white/90 transition-colors">
             Backend
           </h3>
@@ -35,7 +35,7 @@ function Skills() {
           </p>
         </div> */}
 
-          <div className="bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg p-6 shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group">
+          <div className="bg-[#9F438A]/20 backdrop-blur-md border border-[#9F438A]/30 rounded-lg p-6 shadow-xl hover:bg-[#9F438A]/30 hover:border-[#9F438A]/40 transition-all duration-300 group">
             <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-white/90 transition-colors">
               Tools
             </h3>
