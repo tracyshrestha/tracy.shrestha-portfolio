@@ -82,7 +82,7 @@ function Work() {
         >
           {projects.map((project, index) => (
             <SwiperSlide key={index} className="!w-[350px]">
-              <div className="bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg p-6 shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group h-full flex flex-col justify-between">
+              <div className="bg-[#9F438A]/20 backdrop-blur-md border border-[#9F438A]/30 rounded-lg p-6 shadow-xl hover:bg-[#9F438A]/30 hover:border-[#9F438A]/40 transition-all duration-300 group h-full flex flex-col justify-between">
                 <div>
                   <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-white/90">
                     {project.title}
@@ -99,7 +99,7 @@ function Work() {
 
                 {project.isPrivate ? (
                   <button
-                    className="inline-flex items-center gap-2 px-6 py-2 bg-gray-500 text-[#46376d] rounded-3xl hover:shadow-lg backdrop-blur-sm transition-all duration-200 font-medium"
+                    className="inline-flex items-center gap-2 px-6 py-2 bg-gray-500 text-[#9F438A] rounded-3xl hover:shadow-lg backdrop-blur-sm transition-all duration-200 font-medium"
                     disabled
                   >
                     <SlLock />
@@ -110,7 +110,7 @@ function Work() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-2 bg-white/90 text-[#46376d] rounded-3xl hover:bg-white hover:shadow-lg backdrop-blur-sm transition-all duration-200 font-medium"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-2 bg-white/90 text-[#9F438A] rounded-3xl hover:bg-white hover:shadow-lg backdrop-blur-sm transition-all duration-200 font-medium"
                   >
                     View Live Project
                   </a>

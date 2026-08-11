@@ -63,7 +63,7 @@ function ProjectsV2() {
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
         <div className="mb-8 flex items-center justify-center gap-2 text-white">
-          <RiFileCopy2Fill className="text-3xl text-purple-300" aria-hidden />
+          <RiFileCopy2Fill className="text-3xl text-brand-300" aria-hidden />
           <h2
             id="projects-v2-heading"
             className="text-4xl font-semibold tracking-tight"
@@ -85,15 +85,15 @@ function ProjectsV2() {
               <article className="group relative flex min-h-[380px] flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.06] to-transparent p-6 text-left">
                 <div
                   aria-hidden
-                  className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/60 to-transparent opacity-70"
+                  className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-400/60 to-transparent opacity-70"
                 />
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute -right-10 top-0 h-28 w-28 rounded-full bg-purple-500/10 blur-2xl"
+                  className="pointer-events-none absolute -right-10 top-0 h-28 w-28 rounded-full bg-brand-500/10 blur-2xl"
                 />
 
                 <div className="relative mb-4 flex items-start justify-between gap-3">
-                  <span className="font-mono text-sm tabular-nums text-purple-400/80">
+                  <span className="font-mono text-sm tabular-nums text-brand-400/80">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   {project.isPrivate ? (
@@ -102,7 +102,7 @@ function ProjectsV2() {
                       Private
                     </span>
                   ) : (
-                    <span className="rounded-full border border-purple-400/25 bg-purple-500/10 px-2.5 py-0.5 text-xs text-purple-200">
+                    <span className="rounded-full border border-brand-400/25 bg-brand-500/10 px-2.5 py-0.5 text-xs text-brand-200">
                       Live
                     </span>
                   )}
@@ -119,7 +119,7 @@ function ProjectsV2() {
                   {project.tech.map((t) => (
                     <li
                       key={t}
-                      className="rounded-md border border-white/[0.08] bg-black/30 px-2 py-0.5 text-xs text-purple-100/80"
+                      className="rounded-md border border-white/[0.08] bg-black/30 px-2 py-0.5 text-xs text-brand-100/80"
                     >
                       {t}
                     </li>
@@ -137,7 +137,7 @@ function ProjectsV2() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-purple-600/90 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-purple-500"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-600/90 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-500"
                     >
                       View live
                       <FiArrowUpRight className="text-base" />
@@ -162,7 +162,7 @@ function ProjectsV2() {
             transition: transform 0.2s, background 0.2s;
           }
           .projects-mobile-swiper .swiper-pagination-bullet-active {
-            background: rgb(192, 132, 252);
+            background: #9F438A;
             transform: scale(1.25);
           }
         `}</style>

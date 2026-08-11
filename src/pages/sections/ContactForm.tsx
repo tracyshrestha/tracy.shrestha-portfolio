@@ -147,7 +147,7 @@ function EmailForm({ onClose }: EmailFormProps) {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full h-10 rounded-lg border border-gray-300 px-3 py-2 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#46376d] focus:border-transparent"
+                className="w-full h-10 rounded-lg border border-gray-300 px-3 py-2 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#9F438A] focus:border-transparent"
                 placeholder="Your Name"
               />
             </div>
@@ -162,7 +162,7 @@ function EmailForm({ onClose }: EmailFormProps) {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full h-10 rounded-lg border border-gray-300 px-3 py-2 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#46376d] focus:border-transparent"
+                className="w-full h-10 rounded-lg border border-gray-300 px-3 py-2 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#9F438A] focus:border-transparent"
                 placeholder="Your Email"
               />
             </div>
@@ -174,8 +174,8 @@ function EmailForm({ onClose }: EmailFormProps) {
               <div
                 className={`group relative rounded-lg border bg-white transition-shadow ${
                   isListening
-                    ? "border-[#46376d] shadow-[0_0_0_3px_rgba(70,55,109,0.12)]"
-                    : "border-gray-300 focus-within:border-[#46376d] focus-within:shadow-[0_0_0_3px_rgba(70,55,109,0.12)]"
+                    ? "border-[#9F438A] shadow-[0_0_0_3px_rgba(159, 67, 138,0.12)]"
+                    : "border-gray-300 focus-within:border-[#9F438A] focus-within:shadow-[0_0_0_3px_rgba(159, 67, 138,0.12)]"
                 }`}
               >
                 <textarea
@@ -198,7 +198,7 @@ function EmailForm({ onClose }: EmailFormProps) {
                           {[0, 1, 2, 3].map((i) => (
                             <span
                               key={i}
-                              className="w-[3px] rounded-full bg-[#46376d] animate-pulse"
+                              className="w-[3px] rounded-full bg-[#9F438A] animate-pulse"
                               style={{
                                 height: `${8 + (i % 3) * 4}px`,
                                 animationDelay: `${i * 120}ms`,
@@ -207,7 +207,7 @@ function EmailForm({ onClose }: EmailFormProps) {
                             />
                           ))}
                         </span>
-                        <span className="text-xs font-medium text-[#46376d] truncate">
+                        <span className="text-xs font-medium text-[#9F438A] truncate">
                           Listening
                           <span className="text-gray-400 font-normal">
                             {" "}
@@ -224,7 +224,7 @@ function EmailForm({ onClose }: EmailFormProps) {
                         role="tooltip"
                         className="absolute bottom-full right-0 z-20 mb-2"
                       >
-                        <div className="relative whitespace-nowrap rounded-md bg-[#46376d]/90 py-2 pl-3 pr-7 text-[12px] leading-snug text-white shadow-md">
+                        <div className="relative whitespace-nowrap rounded-md bg-[#9F438A]/90 py-2 pl-3 pr-7 text-[12px] leading-snug text-white shadow-md">
                           Try speaking aloud…
                           <button
                             type="button"
@@ -235,7 +235,7 @@ function EmailForm({ onClose }: EmailFormProps) {
                             <X size={11} strokeWidth={2.5} />
                           </button>
                           <span
-                            className="absolute right-3 top-full h-0 w-0 border-x-4 border-t-4 border-x-transparent border-t-[#46376d]/90"
+                            className="absolute right-3 top-full h-0 w-0 border-x-4 border-t-4 border-x-transparent border-t-[#9F438A]/90"
                             aria-hidden
                           />
                         </div>
@@ -260,8 +260,8 @@ function EmailForm({ onClose }: EmailFormProps) {
                       }
                       className={`flex h-8 shrink-0 items-center gap-1.5 rounded-md px-2.5 text-xs font-medium transition-all active:scale-[0.97] ${
                         isListening
-                          ? "bg-[#46376d] text-white shadow-sm hover:bg-[#372b56]"
-                          : "text-[#46376d] hover:bg-[#46376d]/18"
+                          ? "bg-[#9F438A] text-white shadow-sm hover:bg-[#8A3878]"
+                          : "text-[#9F438A] hover:bg-[#9F438A]/18"
                       }`}
                     >
                       {isListening ? (
@@ -282,7 +282,7 @@ function EmailForm({ onClose }: EmailFormProps) {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full text-white bg-[#46376d] hover:bg-[#372b56] py-2 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full text-white bg-[#9F438A] hover:bg-[#8A3878] py-2 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? "Sending..." : "Send  Message"}
           </button>

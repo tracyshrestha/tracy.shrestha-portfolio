@@ -97,7 +97,7 @@ function Footer() {
       <div className="fixed bottom-6 right-6 z-50">
         <button
           onClick={() => setIsPopoverOpen(true)}
-          className="flex items-center gap-2 text-lg bg-[#974087] hover:bg-[#873979] text-white py-3 px-4 rounded-full shadow-lg transition-transform hover:scale-105"
+          className="flex items-center gap-2 text-lg bg-[#9F438A] hover:bg-[#8A3878] text-white py-3 px-4 rounded-full shadow-lg transition-transform hover:scale-105"
           title="Send Message"
           aria-label="Send Message"
         >
@@ -107,7 +107,7 @@ function Footer() {
 
       {isPopoverOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100]"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/25"
           onClick={() => setIsPopoverOpen(false)}
         >
           <div

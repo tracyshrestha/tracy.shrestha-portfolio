@@ -91,7 +91,7 @@ export default function TechStackMarquee() {
         viewport={{ once: true }}
       >
         <h2 className="flex text-4xl font-semibold mb-10 text-white items-center justify-center text-center">
-          <FaTools className="pr-2 " />
+          <FaTools className="pr-2 text-brand-300" />
           My Skills
         </h2>
         <div className="flex flex-col mx-auto items-center justify-center text-center w-full md:max-w-[900px] max-w-[200px] overflow-x-hidden gap-y-3">

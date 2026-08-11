@@ -29,7 +29,7 @@ function EducationV2() {
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
         <div className="mb-8 flex items-center justify-center gap-2 text-white">
-          <FaGraduationCap className="text-3xl text-purple-300" aria-hidden />
+          <FaGraduationCap className="text-3xl text-brand-300" aria-hidden />
           <h2
             id="education-v2-heading"
             className="text-4xl font-semibold tracking-tight"
@@ -41,18 +41,18 @@ function EducationV2() {
         <ul className="flex flex-col gap-5">
           {education.map((item) => (
             <li key={item.degree}>
-              <article className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.06] to-transparent transition-all duration-300 hover:border-purple-400/35 hover:shadow-[0_0_40px_-12px_rgba(140,80,220,0.45)]">
+              <article className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.06] to-transparent transition-all duration-300 hover:border-brand-400/35 hover:shadow-[0_0_40px_-12px_rgba(159, 67, 138,0.45)]">
                 <div
                   aria-hidden
-                  className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/70 to-transparent"
+                  className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-400/70 to-transparent"
                 />
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-purple-500/15 blur-2xl transition-opacity group-hover:bg-purple-400/25"
+                  className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-brand-500/15 blur-2xl transition-opacity group-hover:bg-brand-400/25"
                 />
 
                 <div className="relative flex gap-5 p-6 sm:p-7">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-purple-400/30 bg-purple-500/15 text-purple-200">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-brand-400/30 bg-brand-500/15 text-brand-200">
                     <FaGraduationCap className="text-2xl" aria-hidden />
                   </div>
 
@@ -61,7 +61,7 @@ function EducationV2() {
                       <h3 className="text-xl font-semibold leading-snug text-white sm:text-2xl">
                         {item.degree}
                       </h3>
-                      <span className="shrink-0 rounded-md bg-purple-500/20 px-2.5 py-1 text-sm font-medium tabular-nums text-purple-200">
+                      <span className="shrink-0 rounded-md bg-brand-500/20 px-2.5 py-1 text-sm font-medium tabular-nums text-brand-200">
                         {item.yearOut}
                       </span>
                     </div>
@@ -71,7 +71,7 @@ function EducationV2() {
                     <p className="mt-0.5 text-base text-white/50">
                       {item.university}
                     </p>
-                    <p className="mt-4 text-sm tracking-wide text-purple-300/80">
+                    <p className="mt-4 text-sm tracking-wide text-brand-300/80">
                       {item.period}
                     </p>
                   </div>

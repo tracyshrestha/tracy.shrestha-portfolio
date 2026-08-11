@@ -12,7 +12,7 @@ import ProjectSwiperV2 from "./ProjectSwiperV2";
 function CardsV2Preview() {
   return (
     <div className="min-h-screen w-full bg-black py-16">
-      <p className="mb-12 text-center text-sm uppercase tracking-[0.2em] text-purple-300/60">
+      <p className="mb-12 text-center text-sm uppercase tracking-[0.2em] text-brand-300/60">
         Card UI proposals · v2
       </p>
       <AboutV2 />

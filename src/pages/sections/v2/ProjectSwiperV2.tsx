@@ -46,10 +46,6 @@ const projects = [
   },
 ];
 
-/**
- * Same Swiper coverflow as ProjectSwiper — refreshed borders / surface / CTAs.
- * Swap in Home: `import ProjectSwiper from "./sections/v2/ProjectSwiperV2"`
- */
 function ProjectSwiperV2() {
   return (
     <section
@@ -64,7 +60,7 @@ function ProjectSwiperV2() {
         viewport={{ once: true }}
       >
         <div className="mb-10 flex items-center justify-center gap-2 text-white">
-          <RiFileCopy2Fill className="text-3xl text-purple-300" aria-hidden />
+          <RiFileCopy2Fill className="text-3xl text-brand-300" aria-hidden />
           <h2
             id="projects-swiper-v2-heading"
             className="text-4xl font-semibold tracking-tight"
@@ -75,12 +71,13 @@ function ProjectSwiperV2() {
 
         <Swiper
           effect="coverflow"
-          grabCursor
           centeredSlides
           slidesPerView="auto"
           initialSlide={1}
-          allowTouchMove
           watchSlidesProgress
+          slideToClickedSlide
+          noSwiping
+          noSwipingClass="swiper-no-swiping"
           coverflowEffect={{
             rotate: 30,
             stretch: 0,
@@ -94,26 +91,23 @@ function ProjectSwiperV2() {
         >
           {projects.map((project, index) => (
             <SwiperSlide key={project.title} className="!h-auto !w-[350px]">
-              <article className="group relative flex h-full min-h-[340px] flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.07] via-white/[0.03] to-transparent p-6 text-left shadow-[0_0_0_1px_rgba(140,80,220,0.06)] transition-all duration-300 hover:border-purple-400/40 hover:shadow-[0_24px_48px_-28px_rgba(140,80,220,0.55)]">
-                {/* Top edge sheen */}
+              <article className="project-card-surface group relative flex h-full min-h-[340px] flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.07] via-white/[0.03] to-transparent p-6 text-left shadow-[0_0_0_1px_rgba(159, 67, 138,0.06)] transition-all duration-300 hover:border-brand-400/40 hover:shadow-[0_24px_48px_-28px_rgba(159, 67, 138,0.55)]">
                 <div
                   aria-hidden
-                  className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-400/65 to-transparent"
+                  className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-400/65 to-transparent"
                 />
-                {/* Soft corner glow */}
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-purple-500/15 blur-2xl transition-opacity group-hover:bg-purple-400/25"
+                  className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-brand-500/15 blur-2xl transition-opacity group-hover:bg-brand-400/25"
                 />
-                {/* Left accent rail */}
                 <div
                   aria-hidden
-                  className="absolute inset-y-5 left-0 w-0.5 rounded-full bg-gradient-to-b from-purple-400/80 via-purple-600/40 to-transparent opacity-80"
+                  className="pointer-events-none absolute inset-y-5 left-0 w-0.5 rounded-full bg-gradient-to-b from-brand-400/80 via-brand-600/40 to-transparent opacity-80"
                 />
 
                 <div className="relative pl-2">
                   <div className="mb-3 flex items-center justify-between gap-2">
-                    <span className="font-mono text-xs tabular-nums text-purple-400/70">
+                    <span className="font-mono text-xs tabular-nums text-brand-400/70">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     {project.isPrivate ? (
@@ -122,7 +116,7 @@ function ProjectSwiperV2() {
                         Private
                       </span>
                     ) : (
-                      <span className="rounded-full border border-purple-400/25 bg-purple-500/10 px-2 py-0.5 text-[11px] text-purple-200">
+                      <span className="rounded-full border border-brand-400/25 bg-brand-500/10 px-2 py-0.5 text-[11px] text-brand-200">
                         Live
                       </span>
                     )}
@@ -134,7 +128,7 @@ function ProjectSwiperV2() {
                   <p className="mb-4 text-lg leading-relaxed text-white/70">
                     {project.description}
                   </p>
-                  <p className="mb-5 text-sm leading-relaxed text-purple-200/70">
+                  <p className="mb-5 text-sm leading-relaxed text-brand-200/70">
                     <span className="text-white/40">Tech · </span>
                     {project.tech}
                   </p>
@@ -151,7 +145,16 @@ function ProjectSwiperV2() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-purple-400/30 bg-purple-600/85 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:border-purple-300/50 hover:bg-purple-500"
+                      className="swiper-no-swiping inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl border border-brand-400/30 bg-brand-600/85 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:border-brand-300/50 hover:bg-brand-500"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        window.open(
+                          project.link,
+                          "_blank",
+                          "noopener,noreferrer",
+                        );
+                      }}
                     >
                       View live
                       <FiArrowUpRight className="text-base" />
@@ -163,14 +166,23 @@ function ProjectSwiperV2() {
           ))}
         </Swiper>
 
-        {/* Pagination bullets for this swiper only */}
         <style>{`
+          /* Coverflow bloated hitboxes: only the card receives clicks */
+          .project-swiper-v2 .swiper-slide {
+            pointer-events: none !important;
+          }
+          .project-swiper-v2 .project-card-surface {
+            pointer-events: auto;
+          }
+          .project-swiper-v2 .swiper-pagination {
+            pointer-events: auto;
+          }
           .project-swiper-v2 .swiper-pagination-bullet {
             background: rgba(180, 130, 255, 0.45);
             opacity: 1;
           }
           .project-swiper-v2 .swiper-pagination-bullet-active {
-            background: rgb(192, 132, 252);
+            background: #9F438A;
             transform: scale(1.15);
           }
         `}</style>

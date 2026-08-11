@@ -9,7 +9,7 @@ function Contact() {
         Contact Me
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
-        <div className="bg-[#46376d]/20 backdrop-blur-md border border-[#46376d]/30 rounded-lg p-6 shadow-xl hover:bg-[#46376d]/30 hover:border-[#46376d]/40 transition-all duration-300 group">
+        <div className="bg-[#9F438A]/20 backdrop-blur-md border border-[#9F438A]/30 rounded-lg p-6 shadow-xl hover:bg-[#9F438A]/30 hover:border-[#9F438A]/40 transition-all duration-300 group">
           <div className="flex w-full  flex-col justify-center items-center pt-5 sm:pt-0 pb-2 text-white">
             <div className="text-xl font-bold pb-3 w-full text-left">
               <p className="text-center">Contact Me</p>

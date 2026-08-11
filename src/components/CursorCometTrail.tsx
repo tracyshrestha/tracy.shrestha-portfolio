@@ -74,9 +74,9 @@ function CursorCometTrail() {
         const alpha = t * 0.75;
 
         const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r * 2.2);
-        g.addColorStop(0, `rgba(210, 140, 255, ${alpha})`);
-        g.addColorStop(0.45, `rgba(150, 70, 230, ${alpha * 0.55})`);
-        g.addColorStop(1, "rgba(90, 40, 170, 0)");
+        g.addColorStop(0, `rgba(235, 180, 220, ${alpha})`);
+        g.addColorStop(0.45, `rgba(159, 67, 138, ${alpha * 0.55})`);
+        g.addColorStop(1, "rgba(138, 56, 120, 0)");
 
         ctx.beginPath();
         ctx.fillStyle = g;
@@ -93,9 +93,9 @@ function CursorCometTrail() {
           mouse.y,
           18,
         );
-        g.addColorStop(0, "rgba(220, 160, 255, 0.85)");
-        g.addColorStop(0.5, "rgba(168, 85, 247, 0.35)");
-        g.addColorStop(1, "rgba(100, 40, 180, 0)");
+        g.addColorStop(0, "rgba(235, 190, 225, 0.85)");
+        g.addColorStop(0.5, "rgba(159, 67, 138, 0.4)");
+        g.addColorStop(1, "rgba(138, 56, 120, 0)");
         ctx.beginPath();
         ctx.fillStyle = g;
         ctx.arc(mouse.x, mouse.y, 18, 0, Math.PI * 2);

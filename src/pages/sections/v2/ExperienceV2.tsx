@@ -34,7 +34,7 @@ function ExperienceV2() {
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
         <div className="mb-8 flex items-center justify-center gap-2 text-white">
-          <ImBriefcase className="mb-0.5 text-2xl text-purple-300" aria-hidden />
+          <ImBriefcase className="mb-0.5 text-2xl text-brand-300" aria-hidden />
           <h2
             id="experience-v2-heading"
             className="text-4xl font-semibold tracking-tight"
@@ -43,7 +43,7 @@ function ExperienceV2() {
           </h2>
         </div>
 
-        <ol className="relative ml-3 border-l border-purple-500/35 pl-0">
+        <ol className="relative ml-3 border-l border-brand-500/35 pl-0">
           {roles.map((role, index) => (
             <li key={`${role.title}-${role.period}`} className="relative pb-10 last:pb-0">
               {/* Timeline node */}
@@ -51,8 +51,8 @@ function ExperienceV2() {
                 aria-hidden
                 className={`absolute -left-[5px] top-1.5 flex h-2.5 w-2.5 items-center justify-center rounded-full ring-4 ring-black ${
                   role.current
-                    ? "bg-purple-400 shadow-[0_0_12px_2px_rgba(192,132,252,0.7)]"
-                    : "bg-purple-700"
+                    ? "bg-brand-400 shadow-[0_0_12px_2px_rgba(159, 67, 138,0.7)]"
+                    : "bg-brand-700"
                 }`}
               />
 
@@ -61,7 +61,7 @@ function ExperienceV2() {
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08, duration: 0.4 }}
-                className="ml-6 rounded-xl border border-white/[0.06] bg-white/[0.03] p-5 text-left transition-colors duration-300 hover:border-purple-400/30 hover:bg-purple-500/[0.07]"
+                className="ml-6 rounded-xl border border-white/[0.06] bg-white/[0.03] p-5 text-left transition-colors duration-300 hover:border-brand-400/30 hover:bg-brand-500/[0.07]"
               >
                 <div className="mb-2 flex flex-wrap items-center gap-2">
                   {role.current && (
@@ -69,7 +69,7 @@ function ExperienceV2() {
                       Present
                     </span>
                   )}
-                  <time className="text-sm text-purple-300/85">{role.period}</time>
+                  <time className="text-sm text-brand-300/85">{role.period}</time>
                 </div>
                 <h3 className="text-xl font-semibold text-white sm:text-2xl">
                   {role.title}
