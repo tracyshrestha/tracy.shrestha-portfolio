@@ -33,7 +33,7 @@ function ExperienceV2() {
         viewport={{ once: true, margin: "-40px" }}
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
-        <div className="mb-8 flex items-center justify-center gap-2 text-white">
+        <div className="mb-8 flex items-center justify-center gap-2 text-ink">
           <ImBriefcase className="mb-0.5 text-2xl text-brand-300" aria-hidden />
           <h2
             id="experience-v2-heading"
@@ -49,7 +49,7 @@ function ExperienceV2() {
               {/* Timeline node */}
               <span
                 aria-hidden
-                className={`absolute -left-[5px] top-1.5 flex h-2.5 w-2.5 items-center justify-center rounded-full ring-4 ring-black ${
+                className={`absolute -left-[5px] top-1.5 flex h-2.5 w-2.5 items-center justify-center rounded-full ring-4 ring-surface ${
                   role.current
                     ? "bg-brand-400 shadow-[0_0_12px_2px_rgba(159, 67, 138,0.7)]"
                     : "bg-brand-700"
@@ -61,20 +61,20 @@ function ExperienceV2() {
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08, duration: 0.4 }}
-                className="ml-6 rounded-xl border border-white/[0.06] bg-white/[0.03] p-5 text-left transition-colors duration-300 hover:border-brand-400/30 hover:bg-brand-500/[0.07]"
+                className="card-surface ml-6 overflow-hidden rounded-xl p-5 text-left transition-colors duration-300 hover:border-brand-400/50 hover:shadow-[0_20px_40px_-20px_rgba(159,67,138,0.55)]"
               >
                 <div className="mb-2 flex flex-wrap items-center gap-2">
                   {role.current && (
-                    <span className="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-medium text-emerald-300">
+                    <span className="rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-medium text-emerald-600">
                       Present
                     </span>
                   )}
                   <time className="text-sm text-brand-300/85">{role.period}</time>
                 </div>
-                <h3 className="text-xl font-semibold text-white sm:text-2xl">
+                <h3 className="text-xl font-semibold text-ink sm:text-2xl">
                   {role.title}
                 </h3>
-                <p className="mt-1 text-lg text-white/60">{role.company}</p>
+                <p className="mt-1 text-lg text-ink/60">{role.company}</p>
               </motion.article>
             </li>
           ))}

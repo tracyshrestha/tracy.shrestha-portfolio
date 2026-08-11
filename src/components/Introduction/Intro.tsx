@@ -1,11 +1,13 @@
 import { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
+import { useTheme } from "../../context/ThemeContext";
 
 /** Set VITE_ENABLE_HYPERSPEED=false in .env to skip the heavy Three.js hero. */
 const enableHyperspeed =
   import.meta.env.VITE_ENABLE_HYPERSPEED !== "false";
 
 const Hyperspeed = lazy(() => import("./HyperspeedBackground"));
+const Iridescence = lazy(() => import("../Iridescence"));
 
 const hyperspeedOptions = {
   onSpeedUp: () => {},
@@ -45,32 +47,62 @@ const hyperspeedOptions = {
   },
 };
 
+/** Brand #9F438A as OGL Color RGB 0–1 */
+const IRIDESCENCE_COLOR: [number, number, number] = [
+  159 / 255,
+  67 / 255,
+  138 / 255,
+];
+
 function Intro() {
+  const { theme } = useTheme();
+  const isLight = theme === "light";
+
   return (
     <div>
       <header className="relative h-dvh w-full overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-black">
-          {enableHyperspeed && (
+        <div
+          className={`absolute inset-0 z-0 ${isLight ? "bg-white" : "bg-black"}`}
+        >
+          {isLight ? (
             <Suspense fallback={null}>
-              <Hyperspeed effectOptions={hyperspeedOptions} />
+              <Iridescence
+                color={IRIDESCENCE_COLOR}
+                speed={1}
+                amplitude={0.1}
+                mouseReact
+                className="absolute inset-0 h-full w-full"
+              />
             </Suspense>
+          ) : (
+            enableHyperspeed && (
+              <Suspense fallback={null}>
+                <Hyperspeed effectOptions={hyperspeedOptions} />
+              </Suspense>
+            )
           )}
         </div>
 
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center">
+        <div className="pointer-events-none absolute inset-0 z-10 flex flex-col items-center justify-center text-center">
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="p-4 "
+            className="p-4"
           >
-            <h2 className="text-5xl font-bold text-white">
+            <h2
+              className={`text-5xl font-bold ${isLight ? "text-white" : "text-ink"}`}
+            >
               Hello! I'm Tracy Shrestha
             </h2>
-            <h2 className="text-2xl font-bold text-white">
+            <h2
+              className={`text-2xl font-bold ${isLight ? "text-white" : "text-ink"}`}
+            >
               A Frontend Developer
             </h2>
-            <p className="mt-4 text-xl text-gray-200">
+            <p
+              className={`mt-4 text-xl ${isLight ? "text-white/85" : "text-ink/70"}`}
+            >
               I build user-friendly, responsive web applications using React,
               TypeScript, and Tailwind CSS.
             </p>

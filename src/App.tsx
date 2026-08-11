@@ -5,12 +5,12 @@ import CursorCometTrail from "./components/CursorCometTrail";
 
 function App() {
   return (
-    <div className="relative flex min-h-screen w-full flex-col bg-black px-0 mx-0">
+    <div className="relative flex min-h-screen w-full flex-col bg-surface px-0 mx-0 transition-colors duration-300">
       <CursorCometTrail />
       <Navbar />
 
       {/* flex-1 grows; no items-center so multi-section Home isn't vertically centered */}
-      <main className="flex w-full flex-1 flex-col bg-black">
+      <main className="flex w-full flex-1 flex-col bg-surface">
         <Outlet />
       </main>
 

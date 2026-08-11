@@ -74,7 +74,7 @@ function ProjectSwiperV2() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <div className="mb-10 flex items-center justify-center gap-2 text-white">
+        <div className="mb-10 flex items-center justify-center gap-2 text-ink">
           <RiFileCopy2Fill className="text-3xl text-brand-300" aria-hidden />
           <h2
             id="projects-swiper-v2-heading"
@@ -106,52 +106,52 @@ function ProjectSwiperV2() {
         >
           {projects.map((project, index) => (
             <SwiperSlide key={project.title} className="!h-auto !w-[380px]">
-              <article className="project-card-surface group relative flex h-full min-h-[340px] flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.07] via-white/[0.03] to-transparent p-6 text-left shadow-[0_0_0_1px_rgba(159, 67, 138,0.06)] transition-all duration-300 hover:border-brand-400/40 hover:shadow-[0_24px_48px_-28px_rgba(159, 67, 138,0.55)]">
+              <article className="project-card-surface card-surface-gradient group relative flex h-full min-h-[340px] flex-col justify-between overflow-hidden rounded-2xl p-6 text-left shadow-[0_0_0_1px_rgba(159, 67, 138,0.08)] transition-all duration-300 hover:border-brand-400/45 hover:shadow-[0_24px_48px_-28px_rgba(159, 67, 138,0.45)]">
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-400/65 to-transparent"
+                  className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-px bg-gradient-to-r from-transparent via-brand-400/65 to-transparent"
                 />
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-brand-500/15 blur-2xl transition-opacity group-hover:bg-brand-400/25"
+                  className="pointer-events-none absolute -right-8 -top-8 z-0 h-28 w-28 rounded-full bg-brand-500/20 blur-2xl transition-opacity group-hover:bg-brand-400/30"
                 />
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute inset-y-5 left-0 w-0.5 rounded-full bg-gradient-to-b from-brand-400/80 via-brand-600/40 to-transparent opacity-80"
+                  className="pointer-events-none absolute inset-y-5 left-0 z-0 w-0.5 rounded-full bg-gradient-to-b from-brand-400/80 via-brand-600/40 to-transparent opacity-80"
                 />
 
-                <div className="relative pl-2">
+                <div className="relative z-[2] pl-2">
                   <div className="mb-3 flex items-center justify-between gap-2">
                     <span className="font-mono text-xs tabular-nums text-brand-400/70">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     {project.isPrivate ? (
-                      <span className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[11px] text-white/50">
+                      <span className="card-chip private-badge inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] text-ink/50">
                         <SlLock className="text-[9px]" aria-hidden />
                         Private
                       </span>
                     ) : (
-                      <span className="rounded-full border border-brand-400/25 bg-brand-500/10 px-2 py-0.5 text-[11px] text-brand-200">
+                      <span className="private-badge rounded-full border border-brand-400/25 bg-brand-500/10 px-2 py-0.5 text-[11px] text-brand-200">
                         Live
                       </span>
                     )}
                   </div>
 
-                  <h3 className="mb-3 text-2xl font-semibold text-white">
+                  <h3 className="mb-3 text-2xl font-semibold text-ink">
                     {project.title}
                   </h3>
-                  <p className="mb-4 text-lg leading-relaxed text-white/70">
+                  <p className="mb-4 text-lg leading-relaxed text-ink/70">
                     {project.description}
                   </p>
                   <p className="mb-5 text-sm leading-relaxed text-brand-200/70">
-                    <span className="text-white/40">Tech · </span>
+                    <span className="text-ink/40">Tech · </span>
                     {project.tech}
                   </p>
                 </div>
 
-                <div className="relative pl-2">
+                <div className="relative z-[2] pl-2">
                   {project.isPrivate ? (
-                    <span className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm text-white/45">
+                    <span className="card-chip inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm text-ink/45">
                       <SlLock aria-hidden />
                       Client-only deployment
                     </span>
@@ -185,9 +185,15 @@ function ProjectSwiperV2() {
           /* Coverflow bloated hitboxes: only the card receives clicks */
           .project-swiper-v2 .swiper-slide {
             pointer-events: none !important;
+            height: auto;
+            display: flex;
           }
           .project-swiper-v2 .project-card-surface {
             pointer-events: auto;
+            width: 100%;
+          }
+          .project-swiper-v2 .swiper-wrapper {
+            align-items: stretch;
           }
           .project-swiper-v2 .swiper-pagination {
             pointer-events: auto;

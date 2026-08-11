@@ -22,7 +22,7 @@ function AboutV2() {
         </p>
         <h2
           id="about-v2-heading"
-          className="mb-10 text-center text-4xl font-semibold tracking-tight text-white"
+          className="mb-10 text-center text-4xl font-semibold tracking-tight text-ink"
         >
           About Me
         </h2>
@@ -31,14 +31,14 @@ function AboutV2() {
           {/* Ambient wash — not a hard card edge */}
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(159, 67, 138,0.22),transparent_55%),radial-gradient(ellipse_at_bottom_right,rgba(138, 56, 120,0.18),transparent_50%)]"
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(159, 67, 138,0.28),transparent_55%),radial-gradient(ellipse_at_bottom_right,rgba(196, 107, 176,0.22),transparent_50%)]"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-y-6 left-0 w-1 rounded-full bg-gradient-to-b from-brand-400 via-brand-600 to-transparent"
+            className="pointer-events-none absolute inset-y-6 left-0 w-1 rounded-full bg-gradient-to-b from-brand-400 via-brand-500 to-transparent"
           />
 
-          <div className="relative border border-white/[0.06] bg-white/[0.02] px-8 py-10 pl-10 sm:px-12 sm:py-12 sm:pl-14">
+          <div className="card-surface relative rounded-2xl border-0 px-8 py-10 pl-10 sm:px-12 sm:py-12 sm:pl-14">
             <span
               aria-hidden
               className="mb-4 block text-5xl leading-none text-brand-400/40"
@@ -46,7 +46,7 @@ function AboutV2() {
             >
               “
             </span>
-            <p className="text-left text-xl leading-[1.75] text-white/85 sm:text-2xl">
+            <p className="text-left text-xl leading-[1.75] text-ink/85 sm:text-2xl">
               I’m a frontend developer with experience building scalable web
               apps using modern frameworks like{" "}
               <span className="text-brand-200">React</span>,{" "}

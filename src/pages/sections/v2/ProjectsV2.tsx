@@ -76,7 +76,7 @@ function ProjectsV2() {
         viewport={{ once: true, margin: "-40px" }}
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
-        <div className="mb-8 flex items-center justify-center gap-2 text-white">
+        <div className="mb-8 flex items-center justify-center gap-2 text-ink">
           <RiFileCopy2Fill className="text-3xl text-brand-300" aria-hidden />
           <h2
             id="projects-v2-heading"
@@ -96,14 +96,14 @@ function ProjectsV2() {
         >
           {projects.map((project, index) => (
             <SwiperSlide key={project.title} className="!h-auto">
-              <article className="group relative flex min-h-[380px] flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.06] to-transparent p-6 text-left">
+              <article className="card-surface-gradient group relative flex min-h-[380px] flex-col overflow-hidden rounded-2xl p-6 text-left">
                 <div
                   aria-hidden
                   className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-400/60 to-transparent opacity-70"
                 />
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute -right-10 top-0 h-28 w-28 rounded-full bg-brand-500/10 blur-2xl"
+                  className="pointer-events-none absolute -right-10 top-0 h-28 w-28 rounded-full bg-brand-500/15 blur-2xl"
                 />
 
                 <div className="relative mb-4 flex items-start justify-between gap-3">
@@ -111,21 +111,21 @@ function ProjectsV2() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   {project.isPrivate ? (
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-xs text-white/55">
+                    <span className="card-chip private-badge inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs text-ink/55">
                       <SlLock className="text-[10px]" aria-hidden />
                       Private
                     </span>
                   ) : (
-                    <span className="rounded-full border border-brand-400/25 bg-brand-500/10 px-2.5 py-0.5 text-xs text-brand-200">
+                    <span className="private-badge rounded-full border border-brand-400/25 bg-brand-500/10 px-2.5 py-0.5 text-xs text-brand-200">
                       Live
                     </span>
                   )}
                 </div>
 
-                <h3 className="relative mb-3 text-xl font-semibold text-white sm:text-2xl">
+                <h3 className="relative mb-3 text-xl font-semibold text-ink sm:text-2xl">
                   {project.title}
                 </h3>
-                <p className="relative mb-5 flex-1 text-base leading-relaxed text-white/65">
+                <p className="relative mb-5 flex-1 text-base leading-relaxed text-ink/65">
                   {project.description}
                 </p>
 
@@ -133,7 +133,7 @@ function ProjectsV2() {
                   {project.tech.map((t) => (
                     <li
                       key={t}
-                      className="rounded-md border border-white/[0.08] bg-black/30 px-2 py-0.5 text-xs text-brand-100/80"
+                      className="card-chip rounded-md px-2 py-0.5 text-xs text-brand-200"
                     >
                       {t}
                     </li>
@@ -142,7 +142,7 @@ function ProjectsV2() {
 
                 <div className="relative mt-auto">
                   {project.isPrivate ? (
-                    <span className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm text-white/45">
+                    <span className="card-chip inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm text-ink/45">
                       <SlLock aria-hidden />
                       Client-only deployment
                     </span>
