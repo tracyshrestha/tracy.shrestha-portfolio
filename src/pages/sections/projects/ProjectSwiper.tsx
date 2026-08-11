@@ -24,6 +24,20 @@ const projects = [
     link: "https://kanban-board-blush-six.vercel.app/",
   },
   {
+    title: "Communication Platform",
+    description:
+   "Built a multi-tenant platform with real-time messaging, unified inbox, channel integrations, and AI-powered support tools.",
+    tech: "Next.js, React, TypeScript, Tailwind CSS, WebSockets",
+    isPrivate: true,
+  },
+  {
+    title: "Campaign Automation Platform",
+    description:
+    "Developed a multi-tenant campaign platform supporting automated voice, SMS, and survey campaigns with real-time tracking, analytics, and streamlined campaign workflows.",
+    tech: "Next.js, React, TypeScript, Tailwind CSS, WebSockets, Recharts",
+    isPrivate: true,
+  },
+  {
     title: "CRM System",
     description:
       "Built responsive interfaces for a client-facing CRM using React.js, Tailwind CSS, and ShadCN UI. Implemented role-based routing and dynamic sidebar with permissions.",

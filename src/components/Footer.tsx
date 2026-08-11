@@ -111,7 +111,7 @@ function Footer() {
           onClick={() => setIsPopoverOpen(false)}
         >
           <div
-            className="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 max-h-[90vh] overflow-y-auto"
+            className="mx-4 max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-lg bg-white shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
             <EmailForm onClose={() => setIsPopoverOpen(false)} />

@@ -3,15 +3,15 @@ import { ImBriefcase } from "react-icons/im";
 
 const roles = [
   {
-    title: "Frontend Developer",
-    company: "Cellapp / Smartpalika",
-    period: "Nov 2024 — Present",
+    title: "Mid Frontend Developer",
+    company: "Prixa Technologies",
+    period: "Nov 2025 — Present",
     current: true,
   },
   {
-    title: "Frontend Developer Intern",
+    title: "Frontend Developer",
     company: "Cellapp / Smartpalika",
-    period: "July 2024 — Oct 2024",
+    period: "July 2024 — Oct 2025",
     current: false,
   },
 ];

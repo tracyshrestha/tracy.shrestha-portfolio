@@ -107,7 +107,7 @@ function EmailForm({ onClose }: EmailFormProps) {
               </h1>{" "}
               &nbsp;
               <BsFillInfoCircleFill
-                className=" text-[12px] text-gray-500 cursor-pointer"
+                className=" text-[12px] text-brand cursor-pointer"
                 onClick={() => setShowInfoPopup(!showInfoPopup)}
               />
               {/* Info Popup */}
@@ -139,7 +139,7 @@ function EmailForm({ onClose }: EmailFormProps) {
           <div className="space-y-4">
             <div>
               <label className="text-sm font-medium text-gray-700 block mb-1">
-                Name <span className="text-red-400 text-lg">*</span>
+                Name <span className="text-[#9F438A] text-lg">*</span>
               </label>
               <input
                 type="text"
@@ -154,7 +154,7 @@ function EmailForm({ onClose }: EmailFormProps) {
 
             <div>
               <label className="text-sm font-medium text-gray-700 block mb-1">
-                Email <span className="text-red-400 text-lg">*</span>
+                Email <span className="text-brand text-lg">*</span>
               </label>
               <input
                 type="email"
@@ -169,7 +169,7 @@ function EmailForm({ onClose }: EmailFormProps) {
 
             <div>
               <label className="text-sm font-medium text-gray-700 block mb-1">
-                Message <span className="text-red-400 text-lg">*</span>
+                Message <span className="text-brand text-lg">*</span>
               </label>
               <div
                 className={`group relative rounded-lg border bg-white transition-shadow ${

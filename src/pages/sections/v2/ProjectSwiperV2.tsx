@@ -24,12 +24,19 @@ const projects = [
     link: "https://kanban-board-blush-six.vercel.app/",
   },
   {
-    title: "CRM System",
+    title: "Communication Platform",
     description:
-      "Built responsive interfaces for a client-facing CRM using React.js, Tailwind CSS, and ShadCN UI. Implemented role-based routing and dynamic sidebar with permissions.",
-    tech: "React, TypeScript, Tailwind, ShadCN/UI, REST API",
+   "Built a multi-tenant platform with real-time messaging, unified inbox, channel integrations, and AI-powered support tools.",
+    tech: "Next.js, React, TypeScript, Tailwind CSS, WebSockets",
     isPrivate: true,
   },
+  {
+    title: "Campaign Automation Platform",
+    description:
+    "Developed a multi-tenant campaign platform supporting automated voice, SMS, and survey campaigns with real-time tracking, analytics, and streamlined campaign workflows.",
+    tech: "Next.js, React, TypeScript, Tailwind CSS, WebSockets, Recharts",
+    isPrivate: true,
+  },  
   {
     title: "Blog Platform",
     description:
@@ -37,6 +44,14 @@ const projects = [
     tech: "React, ShadCN/UI, TypeScript, Zustand, JWT Auth",
     link: "https://blog-app-ivory-two-35.vercel.app/",
   },
+  {
+    title: "CRM System",
+    description:
+      "Built responsive interfaces for a client-facing CRM using React.js, Tailwind CSS, and ShadCN UI. Implemented role-based routing and dynamic sidebar with permissions.",
+    tech: "React, TypeScript, Tailwind, ShadCN/UI, REST API",
+    isPrivate: true,
+  },
+
   {
     title: "Open Data Portal",
     description:
@@ -90,7 +105,7 @@ function ProjectSwiperV2() {
           className="project-swiper-v2 mx-auto w-full !pb-12"
         >
           {projects.map((project, index) => (
-            <SwiperSlide key={project.title} className="!h-auto !w-[350px]">
+            <SwiperSlide key={project.title} className="!h-auto !w-[380px]">
               <article className="project-card-surface group relative flex h-full min-h-[340px] flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.07] via-white/[0.03] to-transparent p-6 text-left shadow-[0_0_0_1px_rgba(159, 67, 138,0.06)] transition-all duration-300 hover:border-brand-400/40 hover:shadow-[0_24px_48px_-28px_rgba(159, 67, 138,0.55)]">
                 <div
                   aria-hidden

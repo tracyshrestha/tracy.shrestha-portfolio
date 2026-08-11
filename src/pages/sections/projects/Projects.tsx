@@ -19,10 +19,17 @@ const projects = [
     link: "https://kanban-board-blush-six.vercel.app/",
   },
   {
-    title: "CRM System",
+    title: "Communication Platform",
     description:
-      "Built responsive interfaces for a client-facing CRM using React.js, Tailwind CSS, and ShadCN UI. Implemented role-based routing and dynamic sidebar with permissions.",
-    tech: "React, TypeScript, Tailwind, ShadCN/UI, REST API",
+   "Built a multi-tenant platform with real-time messaging, unified inbox, channel integrations, and AI-powered support tools.",
+    tech: "Next.js, React, TypeScript, Tailwind CSS, WebSockets",
+    isPrivate: true,
+  },
+  {
+    title: "Campaign Automation Platform",
+    description:
+    "Developed a multi-tenant campaign platform supporting automated voice, SMS, and survey campaigns with real-time tracking, analytics, and streamlined campaign workflows.",
+    tech: "Next.js, React, TypeScript, Tailwind CSS, WebSockets, Recharts",
     isPrivate: true,
   },
   {
@@ -31,6 +38,13 @@ const projects = [
       "Developed a blog platform with JWT-based authentication, protected routes, and full CRUD functionality for blog posts. Focused on clean architecture, reusable custom hooks, and robust state management.",
     tech: "React, ShadCN/UI, TypeScript, Zustand, JWT Auth",
     link: "https://blog-app-ivory-two-35.vercel.app/",
+  },
+  {
+    title: "CRM System",
+    description:
+      "Built responsive interfaces for a client-facing CRM using React.js, Tailwind CSS, and ShadCN UI. Implemented role-based routing and dynamic sidebar with permissions.",
+    tech: "React, TypeScript, Tailwind, ShadCN/UI, REST API",
+    isPrivate: true,
   },
   {
     title: "Open Data Portal",

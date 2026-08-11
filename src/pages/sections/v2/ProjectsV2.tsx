@@ -23,18 +23,32 @@ const projects = [
     link: "https://kanban-board-blush-six.vercel.app/",
   },
   {
-    title: "CRM System",
+    title: "Communication Platform",
     description:
-      "Built responsive interfaces for a client-facing CRM using React.js, Tailwind CSS, and ShadCN UI. Implemented role-based routing and dynamic sidebar with permissions.",
-    tech: ["React", "TypeScript", "Tailwind", "ShadCN/UI", "REST API"],
+    "Developed a multi-tenant communication platform with real-time messaging, unified inbox, OAuth channel integrations, and AI-assisted support features.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Shadcn UI", "WebSockets"],
+    isPrivate: true,
+  },
+  {
+    title: "Outbound Campaign Automation Platform",
+    description:
+    "Developed a multi-tenant campaign platform supporting automated voice, SMS, and survey campaigns with real-time tracking, analytics, and streamlined campaign workflows.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Shadcn UI", "WebSockets", "Recharts"],
     isPrivate: true,
   },
   {
     title: "Blog Platform",
     description:
-      "Developed a blog platform with JWT-based authentication, protected routes, and full CRUD functionality for blog posts. Focused on clean architecture and reusable hooks.",
+      "Developed a blog platform with JWT-based authentication, protected routes, and full CRUD functionality for blog posts. Focused on clean architecture, reusable custom hooks, and robust state management.",
     tech: ["React", "ShadCN/UI", "TypeScript", "Zustand", "JWT Auth"],
     link: "https://blog-app-ivory-two-35.vercel.app/",
+  },
+  {
+    title: "CRM System",
+    description:
+      "Built responsive interfaces for a client-facing CRM using React.js, Tailwind CSS, and ShadCN UI. Implemented role-based routing and dynamic sidebar with permissions.",
+    tech: ["React", "TypeScript", "Tailwind", "ShadCN/UI", "REST API"],
+    isPrivate: true,
   },
   {
     title: "Open Data Portal",
@@ -53,7 +67,7 @@ function ProjectsV2() {
   return (
     <section
       id="projects-v2"
-      className="mx-auto w-full max-w-lg px-5 sm:px-8"
+      className="mx-auto w-full max-w-xl px-4 sm:px-6"
       aria-labelledby="projects-v2-heading"
     >
       <motion.div
